@@ -2574,15 +2574,15 @@ product-info .loading__spinner:not(.hidden) ~ *,
 }
 
 .header__icon .icon {
-  height: 2rem;
-  width: 2rem;
+  height: 2.4rem;
+  width: 3rem;
   fill: none;
   vertical-align: middle;
 }
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
+  height: 2.6rem;
   width: 4.4rem;
   padding: 0;
 }

@@ -4,6 +4,21 @@
   Usage:
   {% render 'header-drawer' %}
 {% endcomment %}
+{% style %}
+.menu-title {
+    display: none;
+    text-decoration:none;
+  }
+@media only screen and (max-width: 768px) {
+  .menu-title {
+    font-weight: 500;
+    margin-left: 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+}
+
+{% endstyle %}
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
@@ -12,9 +27,11 @@
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span>
-        {% render 'icon-hamburger' %}
+        {% render 'custom-hamburger-icon' %}
         {% render 'icon-close' %}
       </span>
+      <span class="menu-title">Menu</span>
+      
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
