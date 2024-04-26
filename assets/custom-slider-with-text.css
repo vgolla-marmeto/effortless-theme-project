@@ -119,7 +119,7 @@ align-items:center;
 z-index: 10;
 }
 .custom-slider-with-text--view-deatails-btn{
-font-size: 1.5rem;
+font-size: 1rem;
   color: rgb(58, 131, 126,1);
   font-weight: 700;
   text-decoration: underline;
@@ -127,19 +127,19 @@ font-size: 1.5rem;
   display: block;
 }
 .custom-slider-with-text--hover-card-image-container{
-  margin-right: 10px;
-  width: 82px;
-  max-height: 82px;
+  margin-right: 5px;
+  max-width: 50px;
 }
 .custom-slider-with-text--hover-card-image{
 width:100%;
+overflow: hidden;
 object-position:center;
 object-fit:cover;
 
 }
 .custom-slider-with-text--card-text-container{
 background-color: #fff;
-max-width: 120px;
+max-width: 80px;
 }
 .custom-slider-with-text--product-card-title{
 white-space: nowrap;
@@ -152,7 +152,7 @@ white-space: nowrap;
   font-weight:0;
 }
 .custom-slider-with-text--product-card-price{
-font-size: 1.5rem;
+font-size: 1rem;
   color: #000;
   text-decoration:underline;
   padding: 0;
@@ -161,7 +161,7 @@ font-size: 1.5rem;
 }
 
 .bottom-card_hover_show{
-padding: 8px;
+padding: 5px;
 display: flex;
 background-color:#fff;
 position:absolute;
@@ -169,6 +169,31 @@ align-items:center;
 z-index: 10;
 
 }
+@media  screen and (min-width:520px) {
+  .custom-slider-with-text--view-deatails-btn{
+    font-size: 1.5rem;
+    }
+    .custom-slider-with-text--hover-card-image-container{
+      margin-right: 8px;
+      max-width: 82px;
+      max-height: 82px;
+    }
+    .custom-slider-with-text--hover-card-image{
+      width:100%;
+    }
+    .custom-slider-with-text--card-text-container{
+    max-width: 120px;
+    }
+    .custom-slider-with-text--product-card-price{
+    font-size: 1.5rem;
+    }
+    
+    .bottom-card_hover_show{
+    padding: 8px;    
+    }
+  
+}
+
 .card-container-link-bottom, .card-container-link-top{
 opacity:0;
 }

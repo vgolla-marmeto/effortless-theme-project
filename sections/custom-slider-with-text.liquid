@@ -82,15 +82,14 @@
                   </div>
                   <a href="{{ block.settings.first_product.url }}" class="card-container-link-top">
                     <div
-                      class="custom-slider-with-text--top-card-hover-show-{{ forloop.index }} card-hover-show"
-                    >
+                      class="custom-slider-with-text--top-card-hover-show-{{ forloop.index }} card-hover-show">
                       <div class="custom-slider-with-text--hover-card-image-container">
                         <img
                           src="{{ block.settings.first_product.featured_image | image_url }} "
                           height="82"
                           width="82"
-                          class="custom-slider-with-text--hover-card-image"
-                        >
+                          class="custom-slider-with-text--hover-card-image" alt="product-image"
+                        />
                       </div>
                       <div class="custom-slider-with-text--card-text-container">
                         <p class="custom-slider-with-text--product-card-title">{{ block.settings.first_product.title }}</p>
