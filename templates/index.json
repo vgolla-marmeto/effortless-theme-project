@@ -55,6 +55,51 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "custom_collections_qdbwpj": {
+      "type": "custom-collections",
+      "blocks": {
+        "featured_collection_YL84TC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-fashion"
+          }
+        },
+        "featured_collection_DfzmNb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-swimwear"
+          }
+        },
+        "featured_collection_NAdX7d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-innerwear"
+          }
+        },
+        "featured_collection_YyT6LE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-acessoiries"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_YL84TC",
+        "featured_collection_DfzmNb",
+        "featured_collection_NAdX7d",
+        "featured_collection_YyT6LE"
+      ],
+      "settings": {
+        "color_background": "#ffffff",
+        "title": "Collections",
+        "fontSize": 50,
+        "heading_position": "center",
+        "no_of_blocks_for_desktop": 2,
+        "no_of_blocks_for_mobile": 1,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
     "custom_slider_with_text_kwJ7Vy": {
       "type": "custom-slider-with-text",
       "blocks": {
@@ -135,6 +180,7 @@
   },
   "order": [
     "slideshow_p7VNTP",
+    "custom_collections_qdbwpj",
     "custom_slider_with_text_kwJ7Vy"
   ]
 }
