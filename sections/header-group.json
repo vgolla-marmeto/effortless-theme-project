@@ -10,8 +10,7 @@
           "settings": {
             "announcement": "An Effortless Shipping Experience",
             "navigation_text": "Learn More",
-            "navigation_url": "",
-            "underline_color": "#06aaa1"
+            "navigation_url": ""
           }
         },
         "slide_8QQjQV": {
@@ -19,8 +18,7 @@
           "settings": {
             "announcement": "An Effortless Shipping Experience",
             "navigation_text": "Learn More",
-            "navigation_url": "",
-            "underline_color": "#06aaa1"
+            "navigation_url": ""
           }
         },
         "slide_LmpN74": {
@@ -28,8 +26,7 @@
           "settings": {
             "announcement": "An Effortless Shipping Experience",
             "navigation_text": "Learn More",
-            "navigation_url": "",
-            "underline_color": "#06aaa1"
+            "navigation_url": ""
           }
         }
       },
@@ -44,12 +41,13 @@
         "show_pagination": false,
         "show_arrows": true,
         "auto_play_duration": 3000,
-        "font_size_for_mobile": 8,
+        "font_size_for_mobile": 10,
         "fontsize_for_desktop": 15,
         "text_color": "#ffffff",
+        "underline_color": "#06aaa1",
         "font_weight": 700,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 25,
+        "padding_bottom": 25
       }
     },
     "header": {
