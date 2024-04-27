@@ -5,18 +5,45 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 {% style %}
-.menu-title {
-    display: none;
-    text-decoration:none;
+.menu-title{
+  font-size:2rem;
+}
+  .menu-drawer__title{
+    padding: .5rem 1.5rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.9rem;
+    position: relative;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 18px;
   }
-@media only screen and (max-width: 768px) {
+  .menu-drawer__title .divider {
+    border-bottom: 2px solid;
+    flex: 1 1 0;
+}
+.header__icon--menu{
+  display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.search-icon-alignment{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+   
+
+/* @media only screen and (max-width: 768px) {
   .menu-title {
     font-weight: 500;
     margin-left: 6px;
+    font-size:2rem;
     display: inline-block;
     vertical-align: middle;
 }
-}
+} */
 
 {% endstyle %}
 
@@ -30,13 +57,18 @@
         {% render 'custom-hamburger-icon' %}
         {% render 'icon-close' %}
       </span>
-      <span class="menu-title">Menu</span>
-      
+      <span class="menu-title small-hide">Menu</span>
+      <div class="medium-hide large-up-hide search-icon-alignment">
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
+      </div>
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
+            <p class="menu-drawer__title">
+              Menu
+            <span class="divider"></span></p>
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>

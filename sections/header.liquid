@@ -30,6 +30,12 @@
     justify-self: start;
     margin-left: -1.2rem;
   }
+  .search-icon-alignment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
@@ -293,10 +299,12 @@
           </localization-form>
         {%- endif -%}
       </div>
+      <div class="small-hide search-icon-alignment">
       {% render 'header-search', input_id: 'Search-In-Modal' %}
+      </div>
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} {% endif %}">
           {% render 'custom-profile-icon' %}
           <span class="visually-hidden">
             {%- liquid
