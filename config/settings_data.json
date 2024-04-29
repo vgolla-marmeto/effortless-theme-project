@@ -130,6 +130,23 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "swatches": {
+        "type": "swatches",
+        "blocks": {
+          "solid_color_hNE7z4": {
+            "type": "solid-color",
+            "settings": {
+              "title": "Rose",
+              "color_code": "linear-gradient(228deg, rgba(21, 209, 252, 1) 14%, rgba(187, 48, 254, 1) 83%)"
+            }
+          }
+        },
+        "block_order": [
+          "solid_color_hNE7z4"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
