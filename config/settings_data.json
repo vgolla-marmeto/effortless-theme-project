@@ -140,10 +140,18 @@
               "title": "Rose",
               "color_code": "linear-gradient(228deg, rgba(21, 209, 252, 1) 14%, rgba(187, 48, 254, 1) 83%)"
             }
+          },
+          "solid_color_pp74Mn": {
+            "type": "solid-color",
+            "settings": {
+              "title": "Gold",
+              "color_code": "radial-gradient(rgba(255, 154, 98, 1), rgba(255, 204, 75, 1) 100%)"
+            }
           }
         },
         "block_order": [
-          "solid_color_hNE7z4"
+          "solid_color_hNE7z4",
+          "solid_color_pp74Mn"
         ],
         "settings": {
         }
