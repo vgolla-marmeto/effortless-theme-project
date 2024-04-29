@@ -1,48 +1,57 @@
 <style>
-    {% for block in section.blocks %}
-      .custom .color-swatch--{{ block.settings.title | handleize }}{
-        {% if block.settings.image != blank or block.settings.title == blank %}
-        background:url("{{ block.settings.image | img_url:"small" }}") fixed no-repeat center/cover;
-        {% else %}
-        background:{{ block.settings.color_code }};
-        {% endif %}
-      }
-    {% endfor %}
-  </style>
-  
-  {% schema %}
-  {
-    "name": "Swatches",
-    "settings": [
-    ],
-    "blocks": [
-     {
-       "name":"solid color",
-       "type": "solid-color",
-       "settings": [
-  
-         {
-            "type": "text",
-        "id": "title",
-        "label": "gradient color name"
-  
-  
-         },
-         {
-       "type": "color_background",
-       "id": "color_code",
-       "label": "Gradient color"
-        },
-         {
-           "type": "image_picker",
-           "id": "image",
-           "label": "Image"
-         }
-  
-       ]
-     }
-  
-    ]
+  {% for block in section.blocks %}
+  .item-swatch [data-value="{{ block.settings.title }}"],
+  .item-swatch [data-value="{{ block.settings.title | downcase }}"],
+  .item-swatch [data-value="{{ block.settings.title | downcase | handle }}"],
+  .item-swatch [data-value="{{ block.settings.title | capitalize  }}"],
+  .swatch [data-value="{{ block.settings.title }}"] .bgImg,
+  .swatch [data-value="{{ block.settings.title | downcase }}"] .bgImg,
+  .swatch [data-value="{{ block.settings.title | capitalize  }}"] .bgImg,
+  .color-swatch-enabled[data-tag="{{ block.settings.title }}"] span,
+  .color-swatch-enabled[data-tag="{{ block.settings.title | downcase }}"] span,
+  .color-swatch-enabled[data-tag="{{ block.settings.title | capitalize }}"] span {
+    background-color: {{ block.settings.color_code }} !important;
+    border: 2px solid white!important;
+    margin: 1px !important;
   }
-  {% endschema %}
-  
+  {% endfor %}
+</style>
+{% schema %}
+{
+  "name": "Color Settings",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add Color Settings here"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "colorSettings",
+      "name": "Color Settings",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Color Name"
+        },
+        {
+          "type": "color",
+          "id": "color_code",
+          "label": "Color Code",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Swatch"
+    }
+  ]
+}
+{% endschema %}

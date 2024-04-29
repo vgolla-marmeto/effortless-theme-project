@@ -19,7 +19,7 @@ assign current_variant = product.selected_or_first_available_variant
 
 <custom-product-card class="product-card-item" data-handle="{{ product.handle }}">
     <img src='{{ product.featured_image | image_url }}' width="auto" height="auto" class="image-elemnt">
-    <div class="product-card-info">
+    <div class="product-card-info item-swatch">
             <!-- Badges  using tags -->
 
         {% for tag in product.tags %}
@@ -51,7 +51,7 @@ assign current_variant = product.selected_or_first_available_variant
 
         <p class="product-card-title">{{ product.title }}</p>
         <p class="product-card-vendor">{{ product.vendor }}</p>
-        {% comment %} {% for option in product.options_with_values %}
+        {% for option in product.options_with_values %}
             {% if option.name=="color" or option.name=="Color" %}
                 {% for value in option.values %}
                     <input
@@ -61,12 +61,11 @@ assign current_variant = product.selected_or_first_available_variant
                       value="{{ value }}"
                       data-variant-id={{ current_variant.id }}
                     >
-                    <label for="custom_variant_radio--{{ forloop.index }}">{{ value }}</label>
+                    <label for="custom_variant_radio--{{ forloop.index }}" data-value={{ value }}>{{ value }}</label>
                   {% endfor %}
             {% endif %}
 
         {% endfor %} 
-         {% endcomment %}
          {% unless product.has_only_default_variant %}
             <div class="field mt-1">
                 <select name="options-change">
