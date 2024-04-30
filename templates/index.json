@@ -454,11 +454,19 @@
             "title": "Burlywood",
             "color_code": "#deb887"
           }
+        },
+        "color_settings_N4FwqJ": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "chocolate",
+            "color_code": "#d2691e"
+          }
         }
       },
       "block_order": [
         "color_settings_hFgaiD",
-        "color_settings_RqkXDy"
+        "color_settings_RqkXDy",
+        "color_settings_N4FwqJ"
       ],
       "settings": {
       }
