@@ -468,13 +468,21 @@
             "title": "black",
             "color_code": "#000000"
           }
+        },
+        "color_settings_qepP7B": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "darkgoldenrod",
+            "color_code": "#b8860b"
+          }
         }
       },
       "block_order": [
         "color_settings_hFgaiD",
         "color_settings_RqkXDy",
         "color_settings_N4FwqJ",
-        "color_settings_nmBHj8"
+        "color_settings_nmBHj8",
+        "color_settings_qepP7B"
       ],
       "settings": {
       }
