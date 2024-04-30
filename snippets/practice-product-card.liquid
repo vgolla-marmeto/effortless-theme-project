@@ -1,6 +1,9 @@
-{% liquid
-assign current_variant = product.selected_or_first_available_variant
-%}
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% if current_variant.featured_image != blank %}
+  {% assign variant_featured_image = current_variant.featured_image %}
+{% else %}
+  {% assign variant_featured_image = product.featured_image %}
+{% endif %}
 
 {% style %}
 
@@ -18,7 +21,7 @@ assign current_variant = product.selected_or_first_available_variant
 {% endstyle %}
 
 <custom-product-card class="product-card-item" data-handle="{{ product.handle }}">
-    <img src='{{ product.featured_image | image_url }}' width="auto" height="auto" class="image-elemnt">
+    <img src='{{ variant_featured_image | image_url }}' width="auto" height="auto" class="image-elemnt">
     <div class="product-card-info item-swatch">
             <!-- Badges  using tags -->
 
