@@ -420,21 +420,20 @@
         "padding_bottom": 60
       }
     },
-    "sample_product_card_g7FUj4": {
-      "type": "sample-product-card",
-      "settings": {
-        "heading": "Heading",
-        "product_list": [
-          "black-shirt",
-          "14k-gold-mini-alidia-cubic-zirconia-ring",
-          "18k-gold-mel-ring-in-green-and-red",
-          "24k-gold-plated-double-half-circle-ring"
-        ],
-        "show_view_all": false
-      }
-    },
     "custombestsellers_8bEE9F": {
       "type": "custombestsellers",
+      "blocks": {
+        "slider_gp8tq6": {
+          "type": "slider",
+          "settings": {
+            "collection_handle": "best-sellers",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_gp8tq6"
+      ],
       "settings": {
         "topheading": "Best Sellers"
       }
@@ -450,7 +449,6 @@
     "custom_blog_NdwMxT",
     "custom_slider_with_text_kwJ7Vy",
     "custom_testimonials_7mEnJq",
-    "sample_product_card_g7FUj4",
     "custombestsellers_8bEE9F"
   ]
 }
