@@ -461,12 +461,20 @@
             "title": "chocolate",
             "color_code": "#d2691e"
           }
+        },
+        "color_settings_nmBHj8": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "black",
+            "color_code": "#000000"
+          }
         }
       },
       "block_order": [
         "color_settings_hFgaiD",
         "color_settings_RqkXDy",
-        "color_settings_N4FwqJ"
+        "color_settings_N4FwqJ",
+        "color_settings_nmBHj8"
       ],
       "settings": {
       }
