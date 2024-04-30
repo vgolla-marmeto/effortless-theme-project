@@ -432,6 +432,12 @@
         ],
         "show_view_all": false
       }
+    },
+    "custombestsellers_8bEE9F": {
+      "type": "custombestsellers",
+      "settings": {
+        "topheading": "Best Sellers"
+      }
     }
   },
   "order": [
@@ -444,6 +450,7 @@
     "custom_blog_NdwMxT",
     "custom_slider_with_text_kwJ7Vy",
     "custom_testimonials_7mEnJq",
-    "sample_product_card_g7FUj4"
+    "sample_product_card_g7FUj4",
+    "custombestsellers_8bEE9F"
   ]
 }
