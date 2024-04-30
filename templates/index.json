@@ -482,6 +482,13 @@
             "title": "darkcyan",
             "color_code": "#008b8b"
           }
+        },
+        "color_settings_4bYxqf": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "cornflowerblue",
+            "color_code": "#6495ed"
+          }
         }
       },
       "block_order": [
@@ -490,7 +497,8 @@
         "color_settings_N4FwqJ",
         "color_settings_nmBHj8",
         "color_settings_qepP7B",
-        "color_settings_PbVz83"
+        "color_settings_PbVz83",
+        "color_settings_4bYxqf"
       ],
       "settings": {
       }
