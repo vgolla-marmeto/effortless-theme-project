@@ -496,6 +496,13 @@
             "title": "grey",
             "color_code": "#808080"
           }
+        },
+        "color_settings_C6GfJJ": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "darkred",
+            "color_code": "#8b0000"
+          }
         }
       },
       "block_order": [
@@ -506,7 +513,8 @@
         "color_settings_qepP7B",
         "color_settings_PbVz83",
         "color_settings_4bYxqf",
-        "color_settings_pbhjeN"
+        "color_settings_pbhjeN",
+        "color_settings_C6GfJJ"
       ],
       "settings": {
       }
