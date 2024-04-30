@@ -41,7 +41,7 @@
   
     </div>
       
-      {% if current_variant.inventory_quantity != 0 %}
+      {% comment %} {% if current_variant.inventory_quantity != 0 %}
         <div class="product-card__quick-view position-absolute">
           {% form 'product', product %}
             <input type="hidden" name="id" value="{{ current_variant.id }}">
@@ -55,7 +55,7 @@
           </button>
           {% endform %}
         </div>
-     {% endif %} 
+     {% endif %}  {% endcomment %}
       
     
 
