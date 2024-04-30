@@ -489,6 +489,13 @@
             "title": "cornflowerblue",
             "color_code": "#6495ed"
           }
+        },
+        "color_settings_pbhjeN": {
+          "type": "colorSettings",
+          "settings": {
+            "title": "grey",
+            "color_code": "#808080"
+          }
         }
       },
       "block_order": [
@@ -498,7 +505,8 @@
         "color_settings_nmBHj8",
         "color_settings_qepP7B",
         "color_settings_PbVz83",
-        "color_settings_4bYxqf"
+        "color_settings_4bYxqf",
+        "color_settings_pbhjeN"
       ],
       "settings": {
       }
