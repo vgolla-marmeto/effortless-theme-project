@@ -220,12 +220,12 @@
     .product-card__price-amount {
       font-size: 16px;
     }
-    .splide__arrows {
+    .custombest-seller-slide .splide__arrows {
       top: -53px;
       right: 6px;
       width: 75px;
     }
-    .splide__arrow--next {
+    .custombest-seller-slide .splide__arrow--next {
       top: 0%;
       left: 44%;
     }
