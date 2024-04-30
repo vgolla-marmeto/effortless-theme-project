@@ -1,4 +1,4 @@
-if (!Elements.get("custom-splider")) {
+if (!customElements.get("custom-splider")) {
     class Carousel extends HTMLElement {
       constructor() {
         super();
