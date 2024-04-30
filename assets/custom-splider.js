@@ -3,9 +3,7 @@ if (!customElements.get("splider-component")) {
         constructor() {
           super();
           this.element = this;
-          console.log(this.element)
           this.options = JSON.parse(this.element.dataset.sliderOptions);
-          console.log(this.options)
           this.mountSplider()
         }
       
