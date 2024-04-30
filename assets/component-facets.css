@@ -338,6 +338,7 @@
 .facets__item label,
 .facets__item input[type='checkbox'] {
   cursor: pointer;
+  font-size:14px;
 }
 
 .facet-checkbox {
@@ -754,6 +755,9 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__open > * + * {
   margin-left: 1rem;
+  font-size:16px;
+  font-weight:bold;
+  color: black;
 }
 
 .mobile-facets__open svg {
@@ -1075,6 +1079,9 @@ input.mobile-facets__checkbox {
 
   .facets-vertical .facets-wrapper {
     padding-right: 3rem;
+    padding: 20px;
+    background-color: white;
+    min-height: 100vh;
   }
 
   .facets-vertical .facets-wrapper--no-filters {

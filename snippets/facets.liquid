@@ -14,6 +14,22 @@
 
 {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
 {{ 'component-visual-display.css' | asset_url | stylesheet_tag }}
+{% style %}
+.facets__summary-label{
+  font-size:18px;
+  color:black;
+    font-weight: 600;
+    position: relative;
+}
+.active-facets-desktop{
+  background-color:white;
+  
+}
+
+
+
+
+{%endstyle %}
 
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
@@ -55,7 +71,7 @@
             {%- if filter_type == 'vertical' -%}
               <div class="active-facets active-facets-desktop">
                 <div class="active-facets-vertical-filter">
-                  {%- unless results.filters == empty -%}
+                  {% comment %} {%- unless results.filters == empty -%}
                     <h2
                       class="facets__heading facets__heading--vertical caption-large text-body"
                       id="verticalTitle"
@@ -63,7 +79,7 @@
                     >
                       {{ 'products.facets.filter_by_label' | t }}
                     </h2>
-                  {%- endunless -%}
+                  {%- endunless -%} {% endcomment %}
                   <facet-remove class="active-facets__button-wrapper">
                     <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                       <span>{{ 'products.facets.clear_all' | t }}</span>
@@ -258,7 +274,7 @@
                                 {% endif %}
 
                                 <span class="facet-checkbox__text" aria-hidden="true">
-                                  {{- value.label | escape }} ({{ value.count }})</span
+                                  {{- value.label | escape }} </span
                                 >
                                 <span class="visually-hidden">
                                   {{- value.label | escape }} (
@@ -338,7 +354,7 @@
                           {%- endfor -%}
                         </ul>
                       </fieldset>
-                      {%- if filter.values.size > show_more_number and filter_type == 'vertical' -%}
+                      {% comment %} {%- if filter.values.size > show_more_number and filter_type == 'vertical' -%}
                         <show-more-button>
                           <button
                             class="button-show-more link underlined-link no-js-hidden"
@@ -353,7 +369,7 @@
                             </span>
                           </button>
                         </show-more-button>
-                      {%- endif %}
+                      {%- endif %} {% endcomment %}
                     </div>
                   </details>
                 {% when 'price_range' %}
@@ -631,15 +647,16 @@
     <details class="mobile-facets__disclosure disclosure-has-popup">
       <summary class="mobile-facets__open-wrapper focus-offset">
         <span class="mobile-facets__open{% if filter_type == 'drawer' and enable_filtering == false %} medium-hide large-up-hide{% endif %}">
-          {% render 'icon-filter' %}
+          {% render 'custom-icon-facets-filter' %}
           <span class="mobile-facets__open-label button-label medium-hide large-up-hide">
-            {%- if enable_filtering and enable_sorting -%}
+            Filter
+            {% comment %} {%- if enable_filtering and enable_sorting -%}
               {{ 'products.facets.filter_and_sort' | t }}
             {%- elsif enable_filtering -%}
               {{ 'products.facets.filter_button' | t }}
             {%- elsif enable_sorting -%}
               {{ 'products.facets.sort_button' | t }}
-            {%- endif -%}
+            {%- endif -%} {% endcomment %}
           </span>
           <span class="mobile-facets__open-label button-label small-hide">
             {%- if enable_filtering -%}

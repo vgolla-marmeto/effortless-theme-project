@@ -293,6 +293,7 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
     <script src="{{ 'product-card.js' | asset_url }}" defer></script>
+    {% section 'swatches' %}
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
