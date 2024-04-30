@@ -130,31 +130,6 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
-      },
-      "swatches": {
-        "type": "swatches",
-        "blocks": {
-          "solid_color_hNE7z4": {
-            "type": "solid-color",
-            "settings": {
-              "title": "Rose",
-              "color_code": "linear-gradient(231deg, rgba(187, 48, 254, 1) 75%, rgba(167, 33, 252, 1) 87%, rgba(21, 209, 252, 1) 91%)"
-            }
-          },
-          "solid_color_pp74Mn": {
-            "type": "solid-color",
-            "settings": {
-              "title": "Gold",
-              "color_code": "radial-gradient(rgba(255, 154, 98, 1), rgba(255, 204, 75, 1) 100%)"
-            }
-          }
-        },
-        "block_order": [
-          "solid_color_hNE7z4",
-          "solid_color_pp74Mn"
-        ],
-        "settings": {
-        }
       }
     },
     "content_for_index": [
