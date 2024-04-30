@@ -1,16 +1,5 @@
 {
   "sections": {
-    "practice_best_sellers_7m8AJB": {
-      "type": "practice-best-sellers",
-      "settings": {
-        "heading": "Best Sellers",
-        "Product_list": [
-          "14k-gold-mini-alidia-cubic-zirconia-ring",
-          "18k-gold-mel-ring-in-green-and-red",
-          "24k-gold-plated-double-half-circle-ring"
-        ]
-      }
-    },
     "custom_hero_section_3EEYpV": {
       "type": "custom-hero-section",
       "blocks": {
@@ -446,7 +435,6 @@
     }
   },
   "order": [
-    "practice_best_sellers_7m8AJB",
     "custom_hero_section_3EEYpV",
     "custom_usp_section_wE8WXR",
     "custom_collections_qdbwpj",
