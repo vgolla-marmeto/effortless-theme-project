@@ -41,9 +41,6 @@
   .search__button .icon {
     height: 1.8rem;
   }
-  .facets-vertical .product-grid-container{
-  margin-left:20px;
-  }
 </style>
 
 {%- liquid
@@ -232,8 +229,6 @@
             </aside>
           {%- endif -%}
         {%- endif -%}
-        <div>
-          <h2>{{ collection.title }} hello</h2>
         <div class="product-grid-container" id="ProductGridContainer">
           {%- if search.results.size == 0 and search.filters != empty -%}
             <div
@@ -329,7 +324,6 @@
               {%- endif -%}
             </div>
           {%- endif -%}
-        </div>
         </div>
       </div>
     {%- endif -%}

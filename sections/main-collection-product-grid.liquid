@@ -30,9 +30,36 @@
   .facets-background-color{
     background-color:white;
   }
+  .collection-tabs-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    line-height: 5rem;
+  }
+  .main-collection--title{
+    font-size:30px;
+    font-weight:bold;
+    color:black;
+
+  }
+
+  .collection-tabs{
+    padding: 10px 15px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    color:black;
+    font-size:20px;
+    font-weight:0;
+    border:red;
+    white-space: nowrap;
+  }
+ custom-tabs .active{
+  font-weight:800;
+  border-bottom: 1px solid #3a837e;
+ }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}" id="product-grid-container">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
    
@@ -63,7 +90,47 @@
         {% if settings.animations_reveal_on_scroll %}
           data-cascade
         {% endif %}
+
       >
+        <div class="main-collection-product-grid">
+          <p class="main-collection--title"> {{ collection.title }} </p>
+          <div class="select"><select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message"><option value="manual">
+            Featured
+          </option><option value="best-selling" selected="selected">
+            Best selling
+          </option><option value="title-ascending">
+            Alphabetically, A-Z
+          </option><option value="title-descending">
+            Alphabetically, Z-A
+          </option><option value="price-ascending">
+            Price, low to high
+          </option><option value="price-descending">
+            Price, high to low
+          </option><option value="created-ascending">
+            Date, old to new
+          </option><option value="created-descending">
+            Date, new to old
+          </option></select>
+      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+    </div>
+        </div>
+        {% assign currentPath = request.path %}
+        <custom-tabs class="collection-tabs-container">
+          <div>
+            {% for collection in collections %}
+              {% if collection.url == currentPath %}
+                <span class="collection-tabs active" data-path="{{ collection.url }}" data-handle="{{ collection.handle }}" data-section-id="{{ section.id }}" >{{ collection.title }}</span>
+              {% else %}
+              <span class="collection-tabs" data-path="{{ collection.url }}" data-handle="{{ collection.handle }}" data-section-id="{{ section.id }}" >{{ collection.title }}</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+
+        </custom-tabs>
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
@@ -118,6 +185,8 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+  
+<script src="{{ 'custom-tabs.js'  | asset_url }}" defer></script>
 
 {% schema %}
 {
