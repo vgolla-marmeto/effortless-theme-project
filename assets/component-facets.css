@@ -93,6 +93,9 @@
   min-width: auto;
   min-height: auto;
   transition: none;
+  background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 .facet-filters button {
@@ -549,6 +552,13 @@ span.active-facets__button-inner:after {
 
 .active-facets__button--light .active-facets__button-inner {
   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.2);
+  /* my own styles */
+  background-color: rgba(58, 131, 126);
+    color: white;
+    font-size: 1.875rem;
+    text-transform: capitalize;
+    border-radius: 0;
+
 }
 
 .active-facets__button--light:hover .active-facets__button-inner {

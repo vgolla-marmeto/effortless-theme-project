@@ -79,19 +79,20 @@
                       {{ 'products.facets.filter_by_label' | t }}
                     </h2>
                   {%- endunless -%} {% endcomment %}
-                  <facet-remove class="active-facets__button-wrapper">
-                    <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
-                      <span>{{ 'products.facets.clear_all' | t }}</span>
-                    </a>
-                  </facet-remove>
                 </div>
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
-                          {{ filter.label | escape }}: {{ value.label | escape }}
-                          {% render 'icon-close-small' %}
+                          <div>
+                            {% render 'icon-close-small' %}
+                          </div>
+                          <div>
+                            {{ value.label | escape }}
+                          </div>
+                         
+                         
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                         </span>
                       </a>
@@ -121,6 +122,11 @@
                     {%- endif -%}
                   {% endif %}
                 {%- endfor -%}
+                <facet-remove class="active-facets__button-wrapper">
+                  <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
+                    <span>{{ 'Clear all'}}</span>
+                  </a>
+                </facet-remove>
               </div>
             {%- endif -%}
 
