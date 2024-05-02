@@ -3,6 +3,10 @@
   .custom-reviews--{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.background_Color }}
+  }
+  .reviews-heading{
+    color:{{ section.settings.heading_color }}
   }
   @media screen and (min-width: 749px) {
     .custom-reviews--{{ section.id }} {
@@ -15,7 +19,7 @@
 <section class="review-slider-wrapper container">
   <div class="custom-reviews--{{ section.id }} custom-reviews-wrapper" id="reviews-slider">
     <div class="page-width">
-      <h1 data-aos="fade-left" class="{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
+      <h1 data-aos="fade-left" class="{{section.settings.heading_size}} reviews-heading">{{ section.settings.heading }}</h1>
     </div>
     <div class="page-width">
       <div class="custom-reviews-wrapper--reviews-slider">
@@ -60,10 +64,28 @@
     "class": "section",
     "settings": [
       {
+        "type": "color_background",
+        "id": "background_Color",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color_background",
+        "id": "card_background",
+        "label": "Card background",
+        "default": ""
+      },
+      {
         "type": "inline_richtext",
         "id": "heading",
         "default": "Reviews",
         "label": "Reviews"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#000000"
       },
       {
         "type": "select",

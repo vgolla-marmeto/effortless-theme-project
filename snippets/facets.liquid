@@ -79,6 +79,11 @@
                       {{ 'products.facets.filter_by_label' | t }}
                     </h2>
                   {%- endunless -%} {% endcomment %}
+                  <facet-remove class="active-facets__button-wrapper">
+                    <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
+                      <span>{{ 'Clear all'}}</span>
+                    </a>
+                  </facet-remove>
                 </div>
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
@@ -122,11 +127,6 @@
                     {%- endif -%}
                   {% endif %}
                 {%- endfor -%}
-                <facet-remove class="active-facets__button-wrapper">
-                  <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
-                    <span>{{ 'Clear all'}}</span>
-                  </a>
-                </facet-remove>
               </div>
             {%- endif -%}
 
