@@ -791,17 +791,22 @@
 </section>
 
 <script>
-   let copyBtn = document.querySelector('#main-product--button')
-  console.log("hello")
-  copyBtn.addEventListener("click", function(){
-     navigator.clipboard
-    .readText()
-    .then(
-      (clipText) => (document.querySelector("#offer_value").innerText = clipText),
-  );
-    
-  })
-     
+   let copyBtn = document.querySelector('#copyButton');
+    let offerValue = document.querySelector('#offer_value');
+
+    copyBtn.addEventListener("click", function() {
+        // Select the text within the offer_value element
+        offerValue.select();
+
+        // Execute the copy command
+        document.execCommand('copy');
+
+        // Deselect the text
+        window.getSelection().removeAllRanges();
+
+        // Optionally, you can provide feedback to the user
+        alert('Copied to clipboard: ' + offerValue.value);
+    });
    
   
 </script>
