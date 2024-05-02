@@ -67,7 +67,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
@@ -94,10 +94,26 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_reviews_KnaGmd": {
+      "type": "custom-reviews",
+      "settings": {
+        "heading": "Reviews",
+        "heading_size": "h1",
+        "show_customer_name": true,
+        "auto_play": true,
+        "show_pagination": true,
+        "show_dots_mobile": true,
+        "show_arrows": false,
+        "auto_play_duration": 2000,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "custom_reviews_KnaGmd"
   ]
 }
