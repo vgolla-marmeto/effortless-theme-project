@@ -792,11 +792,12 @@
 
 <script>
    let copyBtn = document.querySelector('#main-product--button')
+  console.log("hello")
   copyBtn.addEventListener("click", function(){
      navigator.clipboard
-  .readText()
-  .then(
-    (clipText) => (document.querySelector("#offer_value").innerText = clipText),
+    .readText()
+    .then(
+      (clipText) => (document.querySelector("#offer_value").innerText = clipText),
   );
     
   })
