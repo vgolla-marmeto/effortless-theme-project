@@ -97,6 +97,34 @@
     },
     "custom_reviews_KnaGmd": {
       "type": "custom-reviews",
+      "blocks": {
+        "ratings_J4PmgN": {
+          "type": "ratings",
+          "settings": {
+            "review": "Give your Review Here",
+            "customer_name": "Verified Customer"
+          }
+        },
+        "ratings_hVfCAt": {
+          "type": "ratings",
+          "settings": {
+            "review": "Give your Review Here",
+            "customer_name": "Verified Customer"
+          }
+        },
+        "ratings_CNb7r6": {
+          "type": "ratings",
+          "settings": {
+            "review": "Give your Review Here",
+            "customer_name": "Verified Customer"
+          }
+        }
+      },
+      "block_order": [
+        "ratings_J4PmgN",
+        "ratings_hVfCAt",
+        "ratings_CNb7r6"
+      ],
       "settings": {
         "heading": "Reviews",
         "heading_size": "h1",
