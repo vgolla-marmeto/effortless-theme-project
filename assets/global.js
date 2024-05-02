@@ -1128,6 +1128,12 @@ class VariantSelects extends HTMLElement {
         const inventorySource = html.getElementById(
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
+        // changing value 
+        const offerDestination = document.getElementById(`offer_value-${this.dataset.section}`);
+        const offersouce = html.getElementById(
+          `offer_value-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        offerDestination.innerHTML = offersouce.innerHTML
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
 
         const volumePricingSource = html.getElementById(
