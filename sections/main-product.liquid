@@ -191,9 +191,9 @@
                   </div>
                   <div class="center">
                     <div>
-                      <h2>{{ product.metafields.custom.coupon_offer.value }} offer</h2>
+                      <h2 id="offer_value">{{ product.metafields.custom.coupon_offer.value }} offer</h2>
                       <h3>Coupon</h3>
-                      <button id="main-product--button-button">copy</button>
+                      <button id="main-product--button">copy</button>
                     </div>
                   </div>
 
@@ -789,6 +789,21 @@
     </script>
   </div>
 </section>
+
+<script>
+   let copyBtn = document.querySelector('#main-product--button')
+  copyBtn.addEventListener("click", function(){
+     navigator.clipboard
+  .readText()
+  .then(
+    (clipText) => (document.querySelector("#offer_value").innerText = clipText),
+  );
+    
+  })
+     
+   
+  
+</script>
 
 {% schema %}
 {
