@@ -14,6 +14,9 @@
       padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
     }
   }
+  .custom-reviews-wrapper--reviews-slider--review-card{
+    background-color:{{ section.settings.card_background }}
+  }
 {% endstyle %}
 {% assign show_customer_name = section.settings.show_customer_name %}
 <section class="review-slider-wrapper container">
@@ -73,7 +76,7 @@
         "type": "color_background",
         "id": "card_background",
         "label": "Card background",
-        "default": ""
+        "default": "#ffffff"
       },
       {
         "type": "inline_richtext",

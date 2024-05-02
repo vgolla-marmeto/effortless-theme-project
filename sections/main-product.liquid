@@ -20,16 +20,26 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      /* padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; */
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
+        /* padding-top: {{ section.settings.padding_top }}px; */
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+    .main-collection-banner--breadcrumbs{
+    background-color: #f1f2f4;
+    padding:10px;
+    padding: 15px 1.5rem;
+  }
+  @media and (min-width:768px){
+    .main-collection-banner--breadcrumbs{
+      padding: 18px 5rem;
+    }
+  } 
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -64,6 +74,11 @@
       onload="this.media='all'"
     >
   {%- endif -%}
+  <div class="main-collection-banner--breadcrumbs">
+    <div class="page-width">
+      {% render 'breadcrumbs' %}
+    </div>
+  </div>
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
