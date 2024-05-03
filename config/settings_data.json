@@ -175,6 +175,20 @@
               "title": "Chocolate",
               "color_code": "#d2691e"
             }
+          },
+          "color_settings_xWe9e9": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Burlywood",
+              "color_code": "#deb887"
+            }
+          },
+          "color_settings_qEd9HN": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "",
+              "color_code": "#000000"
+            }
           }
         },
         "block_order": [
@@ -183,7 +197,9 @@
           "color_settings_GYUgYX",
           "color_settings_kRkME3",
           "color_settings_JpmQfP",
-          "color_settings_V9xQRG"
+          "color_settings_V9xQRG",
+          "color_settings_xWe9e9",
+          "color_settings_qEd9HN"
         ],
         "settings": {
         }
