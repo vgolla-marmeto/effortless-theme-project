@@ -813,7 +813,8 @@
 
 <script>
    let copyBtn = document.querySelector('#main-product--button')
-  copyBtn.addEventListener("click", function(){
+  if (copyBtn !== null){
+     copyBtn.addEventListener("click", function(){
      let copyText = document.querySelector("#offer_value").innerText
   navigator.clipboard.writeText(copyText).then(function () {
                         alert("Copied to clipboard!");
@@ -822,6 +823,9 @@
                       });
     
   })
+    
+  }
+ 
      
    
   
