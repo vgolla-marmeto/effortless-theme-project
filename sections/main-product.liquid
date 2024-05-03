@@ -205,6 +205,7 @@
                   {%- endif -%}
                 </p>
               {%- when 'variant-offer' -%}
+                {% if product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value != blank %}
                 <div class="coupon" >
                   <div class="left">
                     <div>{{ block.settings.offer_title}}</div>
@@ -220,6 +221,7 @@
                     <div>87878521112</div>
                   </div>
                 </div
+                  {% endif %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
