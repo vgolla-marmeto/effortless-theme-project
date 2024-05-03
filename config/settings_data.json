@@ -130,6 +130,23 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "swatches": {
+        "type": "swatches",
+        "blocks": {
+          "color_settings_LnJFLn": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "black",
+              "color_code": "#000000"
+            }
+          }
+        },
+        "block_order": [
+          "color_settings_LnJFLn"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
