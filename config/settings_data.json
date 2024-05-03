@@ -168,6 +168,13 @@
               "title": "darkcyan",
               "color_code": "#008b8b"
             }
+          },
+          "color_settings_V9xQRG": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Chocolate",
+              "color_code": "#d2691e"
+            }
           }
         },
         "block_order": [
@@ -175,7 +182,8 @@
           "color_settings_hxh7Eb",
           "color_settings_GYUgYX",
           "color_settings_kRkME3",
-          "color_settings_JpmQfP"
+          "color_settings_JpmQfP",
+          "color_settings_V9xQRG"
         ],
         "settings": {
         }
