@@ -213,7 +213,7 @@
                   </div>
                   <div class="center">
                     <div>
-                      <h2 id="offer_value-{{ section.id }}">{{ product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }} offer</h2>
+                      <h2 id="offer_value-{{ section.id }}" class="offer_value">{{ product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }} offer</h2>
                       <h3>Coupon</h3>
                       <button id="main-product--button">copy</button>
                     </div>
@@ -818,7 +818,7 @@
    let copyBtn = document.querySelector('#main-product--button')
   
      copyBtn.addEventListener("click", function(){
-     let copyText = document.querySelector("#offer_value").innerText
+     let copyText = document.querySelector(".offer_value").innerText
   navigator.clipboard.writeText(copyText).then(function () {
         alert("Copied to clipboard!");
         }).catch(function (error) {
