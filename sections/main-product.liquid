@@ -820,10 +820,10 @@
      copyBtn.addEventListener("click", function(){
      let copyText = document.querySelector("#offer_value").innerText
   navigator.clipboard.writeText(copyText).then(function () {
-                        alert("Copied to clipboard!");
-                      }).catch(function (error) {
+        alert("Copied to clipboard!");
+        }).catch(function (error) {
                         console.error("Unable to copy:", error);
-                      });
+      });
     
   })
     
