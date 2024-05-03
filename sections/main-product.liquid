@@ -205,7 +205,7 @@
                   {%- endif -%}
                 </p>
               {%- when 'variant-offer' -%}
-                <div id ="onChange">
+                <div id ="onChange-{{ section.id }}">
                 {% if product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value != blank %}
                 <div class="coupon" >
                   <div class="left">
