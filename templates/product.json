@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -49,36 +42,28 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "variant_offer_t3LB7K": {
-          "type": "variant-offer",
-          "settings": {
-            "offer_title": "ENJOY YOUR"
-          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "variant_offer_t3LB7K"
+        "share"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
@@ -102,24 +87,24 @@
         "padding_bottom": 28
       }
     },
-    "custom_reviews_KnaGmd": {
+    "custom_reviews_qPLdYT": {
       "type": "custom-reviews",
       "blocks": {
-        "ratings_J4PmgN": {
+        "ratings_zqDp79": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
             "customer_name": "Verified Customer"
           }
         },
-        "ratings_hVfCAt": {
+        "ratings_gDbhfp": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
             "customer_name": "Verified Customer"
           }
         },
-        "ratings_CNb7r6": {
+        "ratings_XUG4R4": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
@@ -128,12 +113,15 @@
         }
       },
       "block_order": [
-        "ratings_J4PmgN",
-        "ratings_hVfCAt",
-        "ratings_CNb7r6"
+        "ratings_zqDp79",
+        "ratings_gDbhfp",
+        "ratings_XUG4R4"
       ],
       "settings": {
+        "background_Color": "#000000",
+        "card_background": "#ffffff",
         "heading": "Reviews",
+        "heading_color": "#ffffff",
         "heading_size": "h1",
         "show_customer_name": true,
         "auto_play": true,
@@ -141,14 +129,15 @@
         "show_dots_mobile": true,
         "show_arrows": false,
         "auto_play_duration": 2000,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "pagination_color": "#3a837e",
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     }
   },
   "order": [
     "main",
     "related-products",
-    "custom_reviews_KnaGmd"
+    "custom_reviews_qPLdYT"
   ]
 }
