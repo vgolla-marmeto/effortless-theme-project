@@ -1136,6 +1136,14 @@ class VariantSelects extends HTMLElement {
         if (offerDestination && offersouce){
           offerDestination.innerHTML = offersouce.innerHTML
         }
+        const dispalyCardDestination = document.getElementById(`onChange-${this.dataset.section}`);
+        const displayCardsouce = html.getElementById(
+          `onChange-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        if (dispalyCardDestination &&  displayCardsouce){
+          dispalyCardDestination.innerHTML = displayCardsouce.innerHTML
+        }
+        
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
 
         const volumePricingSource = html.getElementById(
