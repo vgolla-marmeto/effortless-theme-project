@@ -161,13 +161,21 @@
               "title": "Darkgoldenrod",
               "color_code": "#b8860b"
             }
+          },
+          "color_settings_JpmQfP": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "darkcyan",
+              "color_code": "#008b8b"
+            }
           }
         },
         "block_order": [
           "color_settings_LnJFLn",
           "color_settings_hxh7Eb",
           "color_settings_GYUgYX",
-          "color_settings_kRkME3"
+          "color_settings_kRkME3",
+          "color_settings_JpmQfP"
         ],
         "settings": {
         }
