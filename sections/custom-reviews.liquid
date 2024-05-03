@@ -17,6 +17,9 @@
   .custom-reviews-wrapper--reviews-slider--review-card{
     background-color:{{ section.settings.card_background }}
   }
+  .custom-reviews-wrapper--reviews-slider .splide__pagination{
+    /* background-color:{{ section.settings.pagination_color }} */
+  }
 {% endstyle %}
 {% assign show_customer_name = section.settings.show_customer_name %}
 <section class="review-slider-wrapper container">
@@ -146,7 +149,15 @@
         "step": 1000,
         "unit": "ms",
         "default": 2000
-      }, {
+      },
+      {
+        "type": "color",
+        "id": "pagination_color",
+        "label": "Pagination color",
+        "default": "#000000"
+      },
+      
+      {
         "type": "header",
         "content": "Section Padding"
       }, {
