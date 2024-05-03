@@ -1133,7 +1133,7 @@ class VariantSelects extends HTMLElement {
         const offersouce = html.getElementById(
           `offer_value-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
-        if (inventorySource && inventoryDestination) offerDestination.innerHTML = offersouce.innerHTML
+        offerDestination.innerHTML = offersouce.innerHTML
 
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
 
