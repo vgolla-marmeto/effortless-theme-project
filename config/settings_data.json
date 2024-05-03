@@ -154,12 +154,20 @@
               "title": "grey",
               "color_code": "#808080"
             }
+          },
+          "color_settings_kRkME3": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Darkgoldenrod",
+              "color_code": "#b8860b"
+            }
           }
         },
         "block_order": [
           "color_settings_LnJFLn",
           "color_settings_hxh7Eb",
-          "color_settings_GYUgYX"
+          "color_settings_GYUgYX",
+          "color_settings_kRkME3"
         ],
         "settings": {
         }
