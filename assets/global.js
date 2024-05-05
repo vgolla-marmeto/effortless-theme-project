@@ -1136,9 +1136,9 @@ class VariantSelects extends HTMLElement {
         if (offerDestination && offersouce){
           offerDestination.innerHTML = offersouce.innerHTML
         }
-        const dispalyCardDestination = document.getElementById(`onChange-${this.dataset.section}`);
+        const dispalyCardDestination = document.getElementById(`coupen--${this.dataset.section}`);
         const displayCardsouce = html.getElementById(
-          `onChange-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+          `coupen--${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         if (dispalyCardDestination &&  displayCardsouce){
           dispalyCardDestination.innerHTML = displayCardsouce.innerHTML
@@ -1290,7 +1290,87 @@ class ProductRecommendations extends HTMLElement {
 
 customElements.define('product-recommendations', ProductRecommendations);
 
+class pincodeChecker extends HTMLElement {
+  constructor() {
+      super();
+      this.pincodeInput = this.querySelector("#pincode");
+      this.pincodeButton = this.querySelector('#pincodeButton');
+      this.result = this.querySelector('#result-container');
+      this.toastCounter = 1; // Define toastCounter within the class
+      this.pincodeButton.addEventListener('click', () => {
+          this.validateCode();
+      });
+  }
+
+  async validateCode() {
+      const pincode = this.pincodeInput.value.trim();
+      const pinRegex = /^[1-9][0-9]{5}$/;
+
+      if (!pinRegex.test(pincode)) {
+          this.displayToastNotification("Please enter a valid 6-digit PIN code.", "fa-triangle-exclamation", "#f39c12", "slide-in-fade-out");
+          return;
+      }
+
+      const apiUrl = `https://api.postalpincode.in/pincode/${pincode}`;
+      try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          if (response.status === 200) {
+              if (data[0].Status === "Success") {
+                  this.displayToastNotification("Your location is deliverable!", "fa-check", "#27AE60", "slide-in-fade-out");
+              } else {
+                  this.displayToastNotification("Delivery unavailable at your location", "fa-info", "#2980b9", "slide-in-fade-out");
+              }
+          } else {
+              this.displayToastNotification("Delivery unavailable at your location", "fa-info", "fa-info", "slide-in-fade-out");
+          }
+      } catch (error) {
+          console.error("Error:", error);
+          this.displayToastNotification("Error validating PIN Code. Please try again later.", "fa-xmark", "#c0392b", "slide-in-fade-out");
+      }
+  }
+
+  displayToastNotification(msg, icon, icon_color, animation) {
+      var masterToast = this.querySelector('.master-toast-notification');
+      if (!masterToast) {
+          console.error("Master toast notification element not found.");
+          return;
+      }
+
+      var class_name = 'toast-' + this.toastCounter; // Access toastCounter using this
+      var new_node = masterToast.cloneNode(true);
+      new_node.classList.remove('hide-toast');
+      new_node.classList.remove('master-toast-notification');
+      new_node.classList.add(class_name, 'toast-notification', animation);
+      new_node.querySelector('.toast-msg').innerText = msg;
+      new_node.querySelector('.toast-icon i').className = 'fa-solid ' + icon;
+      new_node.querySelector('.toast-icon').style.backgroundColor = icon_color;
+      this.querySelector('.toasts').appendChild(new_node);
+      setTimeout(() => {
+          new_node.remove();
+      }, 3800);
+      this.toastCounter++; // Increment toastCounter using this
+  }
+}
+customElements.define("pincode-checker", pincodeChecker);
 
 
-
-       
+class variantOffer extends HTMLElement {
+  constructor() {
+    super();
+    this.couponCode = this.querySelector('[data-code]').dataset.code;
+    this.copyButton = this.querySelector('#copy-coupen');
+    this.copyButton.addEventListener('click', ()=>{
+      this.copyAction();
+    })
+  }
+  copyAction() {
+    // Use the Clipboard API to copy the text
+    navigator.clipboard.writeText(this.couponCode).then(function () {
+      alert('Coupon code copied to clipboard!');
+    }, function (err) {
+      alert('Failed to copy: ', err);
+    });
+  }
+}
+customElements.define("variant-offer", variantOffer);

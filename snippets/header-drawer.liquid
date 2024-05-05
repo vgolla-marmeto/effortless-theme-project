@@ -1,8 +1,10 @@
+{% assign headerProducts = productList %}
+{{ 'custombestsellers.css' | asset_url | stylesheet_tag }}
 {% comment %}
   Renders a header drawer menu for mobile and desktop.
 
   Usage:
-  {% render 'header-drawer' %}
+  {% render 'header-drawer'  %}
 {% endcomment %}
 {% style %}
 .menu-title{
@@ -32,6 +34,19 @@
   display:flex;
   justify-content:center;
   align-items:center;
+}
+.header-products-container{
+  padding:10px;
+}
+.header-drawer--products-container{
+  display:flex;
+  align-items:center;
+
+}
+.header-drawer-single-product{
+  margin-left:0.8rem;
+  flex-grow:1;
+
 }
    
 
@@ -172,6 +187,27 @@
               {%- endfor -%}
             </ul>
           </nav>
+          <div class="header-products-container">
+            <h2>Shop These Deals</h2>
+            <div class="header-drawer--products-container">
+            {% for product in headerProducts %}
+              <div class="header-drawer-single-product">
+              {% render 'header-product-card', product:product %}
+              </div>
+              {% comment %} <div class="header-drawer-product">
+                <div class="header-drawer-image-container">
+                  <img src="{{ product.featured_image | image_url}}" height="300" width="300">
+                  <span>{{ product.tag }}</span>
+                </div>
+                <div class="header-drawer-product-information">
+                  <p>{{ product.title }}</p>
+                  <p>{{ product.price }}</p>
+                </div>
+              </div> {% endcomment %}
+              
+            {% endfor %}
+            </div>
+          </div>
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a

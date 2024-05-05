@@ -43,10 +43,16 @@
             "share_label": "Share"
           }
         },
-        "variant_offer_xjb9Bm": {
+        "variant_offer_GTHpLD": {
           "type": "variant-offer",
           "settings": {
-            "offer_title": "hdh"
+            "offer_title": "hello"
+          }
+        },
+        "pincode_checker_6mVTmV": {
+          "type": "pincode-checker",
+          "settings": {
+            "pincode_title": ""
           }
         }
       },
@@ -58,7 +64,8 @@
         "buy_buttons",
         "description",
         "share",
-        "variant_offer_xjb9Bm"
+        "variant_offer_GTHpLD",
+        "pincode_checker_6mVTmV"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -68,9 +75,9 @@
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "mobile_thumbnails": "show",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12

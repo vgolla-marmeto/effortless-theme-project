@@ -1,22 +1,24 @@
-{% comment %} <div class="main-collection-banner--breadcrumbs">
+<div class="main-collection-banner--breadcrumbs">
   <div class="page-width">
     {% render 'breadcrumbs' %}
   </div>
 </div>
- {% endcomment %}
-
+ 
+ {{'pincode-checker.css' | asset_url | stylesheet_tag }}
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
 >  
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+ 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
@@ -48,6 +50,12 @@
       padding: 18px 5rem;
     }
   } 
+ .pincode-container{
+  text-align:center;
+  margin-top:20px;
+ }
+ 
+    
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -205,26 +213,55 @@
                   {%- endif -%}
                 </p>
               {%- when 'variant-offer' -%}
-                <div id ="onChange-{{ section.id }}">
-                {% if product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value != blank %}
-                <div class="coupon" >
-                  <div class="left">
-                    <div>{{ block.settings.offer_title}}</div>
-                  </div>
-                  <div class="center">
-                    <div>
-                      <h2 id="offer_value-{{ section.id }}" class="offer_value">{{ product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }} offer</h2>
-                      <h3>Coupon</h3>
-                      <button id="main-product--button">copy</button>
-                    </div>
-                  </div>
-                  <div class="right">
-                    <div>87878521112</div>
-                  </div>
+                  <div id="coupen--{{section.id }}">
+                   {% if product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value !=blank %}
+                    <variant-offer class="coupon">
+                      <div class="left">
+                        <div>{{ block.settings.offer_title }}</div>
+                      </div>
+                      <div class="center">
+                        <div>
+                          <!--
+                            <h2 class="coupen-code" id="coupon-code">{{ product.metafields.custom.product_coupen }}</h2>
+                          -->
+                          <h2 class="coupen-code" id="offer_value-{{ section.id }}" data-code='{{  product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }}'>
+                            {{ product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }}
+                          </h2>
+                          <h3>Coupon</h3>
+                          <button id="copy-coupen">Copy</button>
+                        </div>
+                      </div>
+                      <div class="right">
+                        <div>87878521112</div>
+                      </div>
+                    </variant-offer>
+               {% endif %} 
                 </div>
+              {%- when 'pincode-checker' -%}
+               
 
-                  {% endif %}
+                <div class="pincode-container">
+                  <pincode-checker>
+                      <input type="text" id="pincode" placeholder="Enter PIN Code">
+                      <button id="pincodeButton">Validate</button>
+                      <div id="result-container"></div>
+                      <div class="toasts"></div>
+                      <div class="master-toast-notification hide-toast">
+                          <div class="toast-content">
+                              <div class="toast-icon">
+                                  <i class="fa-solid"></i>
+                              </div>
+                              <div class="toast-msg"></div>
+                          </div>
+                          <div class="toast-progress">
+                              <div class="toast-progress-bar"></div>
+                          </div>
+                      </div>
+                  </pincode-checker>
               </div>
+              
+
+
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -814,25 +851,8 @@
   </div>
 </section>
 
-<script>
-   let copyBtn = document.querySelector('#main-product--button')
-  
-     copyBtn.addEventListener("click", function(){
-     let copyText = document.querySelector(".offer_value").innerText
-  navigator.clipboard.writeText(copyText).then(function () {
-        alert("Copied to clipboard!");
-        }).catch(function (error) {
-                        console.error("Unable to copy:", error);
-      });
-    
-  })
-    
-  
- 
      
-   
   
-</script>
 
 {% schema %}
 {
@@ -889,6 +909,19 @@
            "id": "offer_title",
            "label": "Offer title"
          }
+       ],
+      "limit": 1
+    },
+    {
+      "type": "pincode-checker",
+      "name": "Pincode checker",
+       "settings": [
+        {
+          "type": "text",
+          "id": "pincode_title",
+          "label": "pincode title"
+        }
+  
        ],
       "limit": 1
     },
