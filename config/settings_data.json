@@ -189,6 +189,13 @@
               "title": "white",
               "color_code": "#ffffff"
             }
+          },
+          "color_settings_eqq889": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "darkred",
+              "color_code": "#8b0000"
+            }
           }
         },
         "block_order": [
@@ -199,7 +206,8 @@
           "color_settings_JpmQfP",
           "color_settings_V9xQRG",
           "color_settings_xWe9e9",
-          "color_settings_qEd9HN"
+          "color_settings_qEd9HN",
+          "color_settings_eqq889"
         ],
         "settings": {
         }
