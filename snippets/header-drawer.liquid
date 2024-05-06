@@ -188,15 +188,15 @@
             </ul>
           </nav>
           <div class="header-products-container">
-            <h2>Shop These Deals</h2>
+            <h3>Shop These Deals</h3>
             <div class="header-drawer--products-container">
             {% for product in headerProducts %}
               <div class="header-drawer-single-product">
-              {% render 'header-product-card', product:product %}
+              {% render 'header-product-card', product:product %} 
               </div>
               {% comment %} <div class="header-drawer-product">
                 <div class="header-drawer-image-container">
-                  <img src="{{ product.featured_image | image_url}}" height="300" width="300">
+                  <img src="{{ product.featured_image | image_url}}" height="300" width="auto">
                   <span>{{ product.tag }}</span>
                 </div>
                 <div class="header-drawer-product-information">

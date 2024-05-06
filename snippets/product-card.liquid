@@ -20,7 +20,7 @@
     <a href="{{ product.url }}" class="product-card__link position-relative">
       
       <div class="custom--best-sellers ">
-      <div class="image-hover-swap  product-card__image custom-border-radius">
+      <div class="">
      
         {% render 'image',
           desktopImage: featured_image,
@@ -69,7 +69,7 @@
 
 <div class="product-card__prices">
   {% if product.price_varies %}
-    <span class="product-card__price-amount"> From {{ product.price_min | money_with_currency }}</span>
+    <span class="product-card__price-amount"> {{ product.price_min | money_with_currency }}</span>
   {% else %}
     <span class="product-card__price-amount">  {{ product.price | money_with_currency }}</span>   
   {% endif %}                
