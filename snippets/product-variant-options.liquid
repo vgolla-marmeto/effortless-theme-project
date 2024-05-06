@@ -96,16 +96,15 @@
         class="disabled"
       {% endif %}
     >
-      {% if option.name = "color" or option.name="Color" %}
       <label for="{{ input_id }}" data-value={{ value }}>
         {{ label_unavailable }}
       </label>     
-      {% else %}
-      <label for="{{ input_id }}" data-value={{ value }}>
+
+      {% comment %} <label for="{{ input_id }}" data-value={{ value }}>
         {{ value }} 
          {{ label_unavailable }}
-       </label>     
-      {% endif %}
+       </label>      {% endcomment %}
+
     
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
