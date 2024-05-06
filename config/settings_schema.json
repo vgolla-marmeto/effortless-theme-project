@@ -1465,5 +1465,19 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Stock Upper limit value",
+    "settings": [
+      {
+        "type": "range",
+        "min": 0,
+        "max": 1000,
+        "step": 10,
+        "id": "upperLimitValue",
+        "label": "Upper limit value",
+        "default": 200
+      }
+    ]
   }
 ]

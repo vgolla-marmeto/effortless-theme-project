@@ -112,22 +112,64 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
-              {%- when 'text' -%}
+              {% comment %} {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
-                </p>
-              {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
+                </p> {% endcomment %}
+                {%- when 'title' -%}
+                  <div class="product__title" {{ block.shopify_attributes }}>
+                    <h2>{{ product.title | escape }}</h2>
+                    <a href="{{ product.url }}" class="product__title">
+                      <h2 class="h1">
+                        {{ product.title | strip_html }}
+                      </h2>
+                    </a>
+                  </div>
+              {% comment %} {%- when 'title' -%}
+                <div class="product__title"  {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
+                  <a href="{{ product.url }}" >
                     <h2 class="h1">
                       {{ product.title | escape }}
                     </h2>
                   </a>
+                </div> {% endcomment %}
+                {% assign inventory=product.selected_or_first_available_variant.inventory_quantity %}
+                {% assign upperlimit=settings.upperLimitValue %}
+                {% if upperlimit==blank or upperlimit<inventory %}
+                  {% assign upperlimit=200 %}
+                {% endif %}  
+               
+                
+              {%- when 'progress-bar' -%}
+                {{upperlimit }}
+                {% assign widthpercent=inventory | times : 100 | divided_by:upperlimit  %}
+                <div id="progress-bar">
+                {% if inventory!=0 %}
+                <div class="progress-bar">
+                  <span class="in-stock-bar" 
+                    style="width:{{ widthpercent }}%;  
+                    {% if inventory >10 %} background:green; {% else %}background:red;{% endif %}"></span>  
+                  <span class="not-in-stock-bar"></span>  
                 </div>
+                {% endif %}
+              </div>
+
+                <div id="custominventorystatus">
+                  {% if product.selected_or_first_available_variant.inventory_quantity == 0 %}
+                    <p>Preorder</p>
+                    {% elsif  product.selected_or_first_available_variant.inventory_quantity > 10 %}
+                    <p>Available</p>
+
+                     {%elsif  product.selected_or_first_available_variant.inventory_quantity < 10 %}
+                      <p>Only {{ product.selected_or_first_available_variant.inventory_quantity }} units in stock.</p>
+                    
+                    {%endif %}
+                </div>
+
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -221,9 +263,6 @@
                       </div>
                       <div class="center">
                         <div>
-                          <!--
-                            <h2 class="coupen-code" id="coupon-code">{{ product.metafields.custom.product_coupen }}</h2>
-                          -->
                           <h2 class="coupen-code" id="offer_value-{{ section.id }}" data-code='{{  product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }}'>
                             {{ product.selected_or_first_available_variant.metafields.custom.variant_coupon_code.value }}
                           </h2>
@@ -239,7 +278,7 @@
                 </div>
               {%- when 'pincode-checker' -%}
                
-
+{% comment %} 
                 <div class="pincode-container">
                   <pincode-checker>
                       <input type="text" id="pincode" placeholder="Enter PIN Code">
@@ -258,8 +297,20 @@
                           </div>
                       </div>
                   </pincode-checker>
-              </div>
-              {% when 'bundles' %}
+              </div> {% endcomment %}
+              <pincode-checker>
+                <div class="pincode-checker">
+                  <div class="field pincode-checker__field">
+                    <input class="field__input" id="PincodeInput" type="text" name="pincode-input" placeholder="Eg. 560012">
+                    <label class="field__label" for="PincodeInput">Enter Pincode</label>
+                  </div>
+                  <button type="button" class="button pincode-checker__button" name="pincode-submit">Check</button>
+                </div>
+                <div class="pincode-message text-body is-hidden" name="pincode-message"></div>
+            </pincode-checker>
+
+            
+              {% comment %} {% when 'bundles' %}
                 <div class="product-bundle-wrapper">
                       <div class="product-bundle">
                           <h2 class="product-bundle__heading">{{ section.settings.bundle_heading }}</h2>
@@ -296,7 +347,7 @@
                       </div>
                   </div>
               </div>
-              
+               {% endcomment %}
 
 
               {%- when 'description' -%}
@@ -970,6 +1021,19 @@
           "type": "text",
           "id": "pincode_title",
           "label": "pincode title"
+        }
+  
+       ],
+      "limit": 1
+    },
+    {
+      "type": "progress-bar",
+      "name": "Progress bar",
+       "settings": [
+        {
+          "type": "text",
+          "id": "progress_title",
+          "label": "progress title"
         }
   
        ],

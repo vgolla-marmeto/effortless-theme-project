@@ -1091,7 +1091,7 @@ input.mobile-facets__checkbox {
     padding-right: 3rem;
     padding: 20px;
     background-color: white;
-    min-height: 100vh;
+    max-height: 1200px;
   }
 
   .facets-vertical .facets-wrapper--no-filters {

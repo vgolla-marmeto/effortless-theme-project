@@ -1,4 +1,4 @@
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -22,19 +22,7 @@
       padding: 18px 5rem;
     }
   }
-  /* .collection-hero__image-container{
-    min-height: 300px;
-    display: block;
-  }
-  .collection-hero__image-container img {
-    height:100%;
-    width:100%;
-    background-size:cover;
-  }
-  .main-collection-banner-container{
-    position: relative;
-    z-index: 0;
-} */
+  
 .main-collection-banner-container{
   width:100%;
   background-color:#f1f2f4;
@@ -90,40 +78,6 @@
   </div>
 </div>
 
-{% comment %} <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {%- if section.settings.show_collection_image and collection.image -%}
-      <div class="collection-hero__image-container media gradient">
-        <img
-          srcset="
-            {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {{ collection.image | image_url }} {{ collection.image.width }}w
-          "
-          src="{{ collection.image | image_url: width: 750 }}"
-          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-          alt="{{ collection.image.alt | escape }}"
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
-        >
-      </div>
-    {%- endif -%}
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
-
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
-    </div>
-  </div>
-</div> {% endcomment %}
 <div class="main-collection-banner-container" id="main-banner">
   <div class="main-collection-banner-image-container">
     <img src="{{ collection.image | image_url}}" height="auto" width="auto">
@@ -168,28 +122,3 @@
 }
 {% endschema %}
 
-{% comment %} 
-<collection-custom-tabs class="collection-tabs-title">
-                <div class="collection-tabs">
-                  
-<a class="collection-tab  active " id="all-1" data-href="/collections/all" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Shop All</h2>
-                    </a>
-                  <a class="collection-tab " id="all-2" data-href="/collections/best-sellers" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Best Sellers</h2>
-                    </a>
-                  <a class="collection-tab " id="all-3" data-href="/collections/mens-accessories" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Men's Accessories</h2>
-                    </a>
-                  <a class="collection-tab " id="all-4" data-href="/collections/mens-fashion" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Men's Fashion</h2>
-                    </a>
-                  <a class="collection-tab " id="all-5" data-href="/collections/mens-swimwear" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Men's Swimwear</h2>
-                    </a>
-                  <a class="collection-tab " id="all-6" data-href="/collections/mens-innerwear" data-handle="https://effortless-theme-demo.myshopify.com/collections/all">
-                      <h2>Men's Innerwear</h2>
-                    </a>
-                  
-                </div>
-              </collection-custom-tabs> {% endcomment %}

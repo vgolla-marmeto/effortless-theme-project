@@ -1,5 +1,8 @@
 cart-items .title-wrapper-with-link {
   margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart-items td,

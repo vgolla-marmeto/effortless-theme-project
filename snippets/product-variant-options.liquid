@@ -96,9 +96,11 @@
         class="disabled"
       {% endif %}
     >
-      <label for="{{ input_id }}" data-value={{ value }}>
-        {{ label_unavailable }}
-      </label>     
+
+      <label  {% if option.name=="Color"  %} data-value={{ value }} class="product-form-color-style" {% endif %} for="{{ input_id }}">
+   {% if option.name != "Color" %}{{ value }} {% endif %}
+      {{ label_unavailable }}
+    </label> 
 
       {% comment %} <label for="{{ input_id }}" data-value={{ value }}>
         {{ value }} 

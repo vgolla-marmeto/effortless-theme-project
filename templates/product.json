@@ -37,12 +37,6 @@
           "settings": {
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
         "variant_offer_xjb9Bm": {
           "type": "variant-offer",
           "settings": {
@@ -51,6 +45,7 @@
         },
         "bundles_Nk4k4y": {
           "type": "bundles",
+          "disabled": true,
           "settings": {
             "bundle_heading": "Frequently bought together"
           }
@@ -59,6 +54,11 @@
           "type": "pincode-checker",
           "settings": {
             "pincode_title": ""
+          }
+        },
+        "progress_bar_McYxWm": {
+          "type": "progress-bar",
+          "settings": {
           }
         }
       },
@@ -69,15 +69,15 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
         "variant_offer_xjb9Bm",
         "bundles_Nk4k4y",
-        "pincode_checker_yAg6WJ"
+        "pincode_checker_yAg6WJ",
+        "progress_bar_McYxWm"
       ],
       "settings": {
         "enable_sticky_info": false,
         "color_scheme": "scheme-1",
-        "media_size": "medium",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
@@ -108,24 +108,24 @@
         "padding_bottom": 28
       }
     },
-    "custom_reviews_qPLdYT": {
+    "custom_reviews_jMTQBp": {
       "type": "custom-reviews",
       "blocks": {
-        "ratings_zqDp79": {
+        "ratings_FUikBP": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
             "customer_name": "Verified Customer"
           }
         },
-        "ratings_gDbhfp": {
+        "ratings_TrVdFU": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
             "customer_name": "Verified Customer"
           }
         },
-        "ratings_XUG4R4": {
+        "ratings_73KxUA": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
@@ -134,32 +134,31 @@
         }
       },
       "block_order": [
-        "ratings_zqDp79",
-        "ratings_gDbhfp",
-        "ratings_XUG4R4"
+        "ratings_FUikBP",
+        "ratings_TrVdFU",
+        "ratings_73KxUA"
       ],
-      "disabled": true,
       "settings": {
-        "background_Color": "#000000",
-        "card_background": "#ffffff",
+        "background_Color": "#000",
+        "card_background": "#fff",
         "heading": "Reviews",
-        "heading_color": "#ffffff",
-        "heading_size": "h1",
+        "heading_color": "#000000",
+        "heading_size": "h0",
         "show_customer_name": true,
         "auto_play": true,
         "show_pagination": true,
         "show_dots_mobile": true,
         "show_arrows": false,
         "auto_play_duration": 2000,
-        "pagination_color": "#3a837e",
-        "padding_top": 50,
-        "padding_bottom": 50
+        "pagination_color": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
     "related-products",
-    "custom_reviews_qPLdYT"
+    "custom_reviews_jMTQBp"
   ]
 }
