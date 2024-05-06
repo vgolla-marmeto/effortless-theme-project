@@ -54,6 +54,12 @@
           "settings": {
             "bundle_heading": "Frequently bought together"
           }
+        },
+        "pincode_checker_yAg6WJ": {
+          "type": "pincode-checker",
+          "settings": {
+            "pincode_title": ""
+          }
         }
       },
       "block_order": [
@@ -65,7 +71,8 @@
         "description",
         "share",
         "variant_offer_xjb9Bm",
-        "bundles_Nk4k4y"
+        "bundles_Nk4k4y",
+        "pincode_checker_yAg6WJ"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -131,6 +138,7 @@
         "ratings_gDbhfp",
         "ratings_XUG4R4"
       ],
+      "disabled": true,
       "settings": {
         "background_Color": "#000000",
         "card_background": "#ffffff",
