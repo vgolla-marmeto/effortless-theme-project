@@ -43,13 +43,19 @@
             "share_label": "Share"
           }
         },
-        "variant_offer_GTHpLD": {
+        "variant_offer_xjb9Bm": {
           "type": "variant-offer",
           "settings": {
-            "offer_title": "hello"
+            "offer_title": "hdh"
           }
         },
-        "pincode_checker_6mVTmV": {
+        "bundles_Nk4k4y": {
+          "type": "bundles",
+          "settings": {
+            "bundle_heading": "Frequently bought together"
+          }
+        },
+        "pincode_checker_yAg6WJ": {
           "type": "pincode-checker",
           "settings": {
             "pincode_title": ""
@@ -64,8 +70,9 @@
         "buy_buttons",
         "description",
         "share",
-        "variant_offer_GTHpLD",
-        "pincode_checker_6mVTmV"
+        "variant_offer_xjb9Bm",
+        "bundles_Nk4k4y",
+        "pincode_checker_yAg6WJ"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -75,9 +82,9 @@
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "none",
+        "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
@@ -131,6 +138,7 @@
         "ratings_gDbhfp",
         "ratings_XUG4R4"
       ],
+      "disabled": true,
       "settings": {
         "background_Color": "#000000",
         "card_background": "#ffffff",
