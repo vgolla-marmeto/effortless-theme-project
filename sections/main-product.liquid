@@ -112,13 +112,6 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
-              {% comment %} {%- when 'text' -%}
-                <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{- block.settings.text -}}
-                </p> {% endcomment %}
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
                     <h2>{{ product.title | escape }}</h2>
@@ -128,23 +121,14 @@
                       </h2>
                     </a>
                   </div>
-              {% comment %} {%- when 'title' -%}
-                <div class="product__title"  {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" >
-                    <h2 class="h1">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
-                </div> {% endcomment %}
-                {% assign inventory=product.selected_or_first_available_variant.inventory_quantity %}
+                {% comment %} {% assign inventory=product.selected_or_first_available_variant.inventory_quantity %}
                 {% assign upperlimit=settings.upperLimitValue %}
                 {% if upperlimit==blank or upperlimit<inventory %}
                   {% assign upperlimit=200 %}
-                {% endif %}  
+                {% endif %}   {% endcomment %}
                
                 
-              {%- when 'progress-bar' -%}
+              {% comment %} {%- when 'progress-bar' -%}
                 {{upperlimit }}
                 {% assign widthpercent=inventory | times : 100 | divided_by:upperlimit  %}
                 {{ inventory }}
@@ -157,7 +141,7 @@
                   <span class="not-in-stock-bar"></span>  
                 </div>
                 {% endif %}
-              </div>
+              </div> {% endcomment %}
 
                 <div id="custominventorystatus">
                   {% if product.selected_or_first_available_variant.inventory_quantity == 0 %}
@@ -279,7 +263,7 @@
                 </div>
               {%- when 'pincode-checker' -%}
                
-{% comment %} 
+                {% comment %} 
                 <div class="pincode-container">
                   <pincode-checker>
                       <input type="text" id="pincode" placeholder="Enter PIN Code">
@@ -312,7 +296,7 @@
 
             
               
-            {%- when 'addtocart' -%}
+                    {%- when 'addtocart' -%}
                         <div id="bundle__atc"
                           class="button custom-atc__hover-button"
                           data-product-id="{{ product.id }}"

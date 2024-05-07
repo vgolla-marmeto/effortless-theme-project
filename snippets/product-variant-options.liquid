@@ -97,7 +97,7 @@
       {% endif %}
     >
 
-      <label  {% if option.name=="Color"  %} data-value={{ value }} class="product-form-color-style" {% endif %} for="{{ input_id }}">
+      <label  {% if option.name=="Color"  %} data-value={{ value }} style="padding: 0.5rem 1.5rem;" class="product-form-color-style" {% endif %} for="{{ input_id }}">
    {% if option.name != "Color" %}{{ value }} {% endif %}
       {{ label_unavailable }}
     </label> 

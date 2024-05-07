@@ -75,24 +75,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button 
-            id="ProductSubmitButton-{{ section_id }}-1"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-              disabled
-            {% endif %}
-          >
-            <span id="cutsomAddtocartbutton">
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {% comment %} {{ 'products.product.add_to_cart' | t }} {% endcomment %} add  4 quantity = {{ product.selected_or_first_available_variant.price | money_without_currency}}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
+         
            <button 
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -111,6 +94,41 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button> 
+          <button 
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span id="customaddto-cart-view">
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                ADD T0 CART Rs:{{ product.selected_or_first_available_variant.price | money_without_currency }}
+
+                {% comment %} <input
+                  class="quantity__input"
+                  type="number"
+                  name="quantity"
+                  id="Quantityinput"
+                  data-cart-quantity="{{ cart_qty }}"
+                  data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                  min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                  {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                    data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                    max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                  {% endif %}
+                  step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                  value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                  form="{{ product_form_id }}"
+                > {% endcomment %}
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}

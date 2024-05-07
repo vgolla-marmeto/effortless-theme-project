@@ -1125,18 +1125,22 @@ class VariantSelects extends HTMLElement {
           `Sku-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const skuDestination = document.getElementById(`Sku-${this.dataset.section}`);
+
+
+        let updatedaddtocart_view = html.getElementById("customaddto-cart-view")
+        let previousaddtocart_view = document.getElementById("customaddto-cart-view");
+
+        if (updatedaddtocart_view && previousaddtocart_view) previousaddtocart_view.innerHTML = updatedaddtocart_view.innerHTML;
+          
+
+
+
         const inventorySource = html.getElementById(
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
-
-        const destinationChangingPrice = document.getElementById("cutsomAddtocartbutton");
-        const sourceChangingPrice = html.getElementById("cutsomAddtocartbutton");
-        if (destinationChangingPrice && sourceChangingPrice){
-          destinationChangingPrice.innerHTML = sourceChangingPrice.innerHTML
-        }
-
-      
-
+         
+        // changing value 
+        
         // changing value 
         const offerDestination = document.getElementById(`offer_value-${this.dataset.section}`);
         const offersouce = html.getElementById(
@@ -1152,6 +1156,7 @@ class VariantSelects extends HTMLElement {
         if (dispalyCardDestination &&  displayCardsouce){
           dispalyCardDestination.innerHTML = displayCardsouce.innerHTML
         }
+
 
         if (html.getElementById("color-swatch-name")) {
           let updatedColorName = html.getElementById("color-swatch-name");
@@ -1553,15 +1558,14 @@ class PincodeChecker extends HTMLElement {
         this.pincodeMessage.innerHTML = successHtml;
         this.pincodeMessage.classList.add('is-success');
         this.pincodeMessage.classList.remove('is-error', 'is-hidden');
-        this.addToCartButton.setAttribute("disabled", false)
+        // this.addToCartButton.setAttribute("disabled", false)
       } 
       else {
         //IF THE ENTERED PINCODE DOESN'T MATCH WITH THE SHEET PINCODES OR UNSERVICEABLE
         this.pincodeMessage.innerHTML = 'Service is not available to your location. Please try with an alternative pincode!';
         this.pincodeMessage.classList.add('is-error');
         this.pincodeMessage.classList.remove('is-success', 'is-hidden');
-        this.addToCartButton.setAttribute("disabled", true
-      )
+        // this.addToCartButton.setAttribute("disabled", true)
       }
     } 
     else {
@@ -1569,7 +1573,7 @@ class PincodeChecker extends HTMLElement {
       this.pincodeMessage.innerHTML = 'Please enter a valid 6 digit pincode!!';
       this.pincodeMessage.classList.add('is-error');
       this.pincodeMessage.classList.remove('is-success', 'is-hidden');
-      this.addToCartButton.setAttribute("disabled", true)
+      // this.addToCartButton.setAttribute("disabled", true)
     }  
   }
 
