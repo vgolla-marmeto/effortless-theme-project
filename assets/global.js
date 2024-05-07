@@ -1480,6 +1480,7 @@ class PincodeChecker extends HTMLElement {
     this.pincodeInput = this.querySelector('[name="pincode-input"]');
     this.pincodeSubmitBtn = this.querySelector('[name="pincode-submit"]');
     this.pincodeMessage = this.querySelector('[name="pincode-message"]');
+    this.addToCartButton = document.querySelector('.product-form__submit')
     this.sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + this.sheetKey + "/values/Sheet1?key=" + this.apiKey;
     
       
@@ -1543,12 +1544,14 @@ class PincodeChecker extends HTMLElement {
         this.pincodeMessage.innerHTML = successHtml;
         this.pincodeMessage.classList.add('is-success');
         this.pincodeMessage.classList.remove('is-error', 'is-hidden');
+        this.addToCartButton.setAttribute("disabled", false)
       } 
       else {
         //IF THE ENTERED PINCODE DOESN'T MATCH WITH THE SHEET PINCODES OR UNSERVICEABLE
         this.pincodeMessage.innerHTML = 'Service is not available to your location. Please try with an alternative pincode!';
         this.pincodeMessage.classList.add('is-error');
         this.pincodeMessage.classList.remove('is-success', 'is-hidden');
+        this.addToCartButton.setAttribute("disabled", true)
       }
     } 
     else {
@@ -1556,6 +1559,7 @@ class PincodeChecker extends HTMLElement {
       this.pincodeMessage.innerHTML = 'Please enter a valid 6 digit pincode!!';
       this.pincodeMessage.classList.add('is-error');
       this.pincodeMessage.classList.remove('is-success', 'is-hidden');
+      this.addToCartButton.setAttribute("disabled", true)
     }  
   }
 

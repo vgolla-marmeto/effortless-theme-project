@@ -1343,7 +1343,10 @@ button.shopify-payment-button__button--unbranded {
 .button--small {
   padding: 1.2rem 2.6rem;
 }
-
+.button-disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 /* Button - other */
 
 .button:disabled,

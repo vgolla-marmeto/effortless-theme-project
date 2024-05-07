@@ -59,6 +59,7 @@
         "progress_bar_McYxWm": {
           "type": "progress-bar",
           "settings": {
+            "progress_title": "hello"
           }
         }
       },
