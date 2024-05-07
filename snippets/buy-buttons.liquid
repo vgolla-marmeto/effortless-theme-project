@@ -94,6 +94,7 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button> 
+          
           <button 
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -109,22 +110,6 @@
               {%- else -%}
                 ADD T0 CART Rs:{{ product.selected_or_first_available_variant.price | money_without_currency }}
 
-                {% comment %} <input
-                  class="quantity__input"
-                  type="number"
-                  name="quantity"
-                  id="Quantityinput"
-                  data-cart-quantity="{{ cart_qty }}"
-                  data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-                    data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                    max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                  {% endif %}
-                  step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-                  value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  form="{{ product_form_id }}"
-                > {% endcomment %}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

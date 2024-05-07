@@ -1416,6 +1416,7 @@
   {
     "name": "t:settings_schema.cart.name",
     "settings": [
+      
       {
         "type": "select",
         "id": "cart_type",

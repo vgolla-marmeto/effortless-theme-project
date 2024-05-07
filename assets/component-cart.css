@@ -133,7 +133,8 @@ cart-items {
 
   .cart__footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
     border: 0;
   }
 
