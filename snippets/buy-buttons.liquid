@@ -76,7 +76,6 @@
             endif
           -%}
           <button 
-            id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
@@ -84,11 +83,11 @@
               disabled
             {% endif %}
           >
-            <span>
+            <span id="cutsomAddtocartbutton">
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {% comment %} {{ 'products.product.add_to_cart' | t }} {% endcomment %} add  4 quantity = 
+                {% comment %} {{ 'products.product.add_to_cart' | t }} {% endcomment %} add  4 quantity = {{ product.selected_or_first_available_variant.price }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

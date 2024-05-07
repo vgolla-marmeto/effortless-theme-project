@@ -1128,6 +1128,15 @@ class VariantSelects extends HTMLElement {
         const inventorySource = html.getElementById(
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
+
+        const destinationChangingPrice = document.getElementById("cutsomAddtocartbutton");
+        const sourceChangingPrice = html.getElementById("cutsomAddtocartbutton");
+        if (destinationChangingPrice && sourceChangingPrice){
+          destinationChangingPrice.innerHTML = sourceChangingPrice.innerHTML
+        }
+
+      
+
         // changing value 
         const offerDestination = document.getElementById(`offer_value-${this.dataset.section}`);
         const offersouce = html.getElementById(
@@ -1551,7 +1560,8 @@ class PincodeChecker extends HTMLElement {
         this.pincodeMessage.innerHTML = 'Service is not available to your location. Please try with an alternative pincode!';
         this.pincodeMessage.classList.add('is-error');
         this.pincodeMessage.classList.remove('is-success', 'is-hidden');
-        this.addToCartButton.setAttribute("disabled", true)
+        this.addToCartButton.setAttribute("disabled", true
+      )
       }
     } 
     else {

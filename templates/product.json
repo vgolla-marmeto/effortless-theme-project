@@ -61,12 +61,6 @@
           "settings": {
             "progress_title": "hello"
           }
-        },
-        "addtocart_knmxRM": {
-          "type": "addtocart",
-          "settings": {
-            "addtocarttext": "Frequently bought together"
-          }
         }
       },
       "block_order": [
@@ -79,8 +73,7 @@
         "variant_offer_xjb9Bm",
         "bundles_Nk4k4y",
         "pincode_checker_yAg6WJ",
-        "progress_bar_McYxWm",
-        "addtocart_knmxRM"
+        "progress_bar_McYxWm"
       ],
       "settings": {
         "enable_sticky_info": false,

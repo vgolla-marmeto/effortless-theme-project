@@ -7,6 +7,7 @@ if (!customElements.get('product-info')) {
         this.input = this.querySelector('.quantity__input');
         this.currentVariant = this.querySelector('.product-variant-id');
         this.submitButton = this.querySelector('[type="submit"]');
+        
       }
 
       cartUpdateUnsubscriber = undefined;
