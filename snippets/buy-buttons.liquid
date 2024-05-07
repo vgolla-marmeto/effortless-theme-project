@@ -93,7 +93,7 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
-          <button 
+          {% comment %} <button 
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
@@ -110,7 +110,7 @@
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
-          </button>
+          </button> {% endcomment %}
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
