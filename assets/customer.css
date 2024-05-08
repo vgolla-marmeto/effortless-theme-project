@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
-    max-width: 47.8rem;
+    max-width: 57.8rem;
   }
 }
 
@@ -23,6 +23,11 @@
 
 .customer button {
   margin: 4rem 0 1.5rem;
+  background-color: #3a837e;
+  border-radius: 20px;
+  padding: 19px 57px 19px 57px;
+  font-size: 20px;
+  font-size: bold;
 }
 
 .customer ul {
@@ -52,7 +57,7 @@
 }
 
 .customer .field {
-  margin: 2rem 0 0 0;
+  margin-bottom: 2rem;
 }
 
 .customer .field:first-of-type {
@@ -333,6 +338,8 @@
   display: block;
   margin: 0 auto;
   width: fit-content;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .login a[href='#recover'] {
@@ -342,6 +349,8 @@
 
 .login .field + a {
   margin-top: 1rem;
+  font-size: 14px;
+    font-weight: bold;
 }
 
 .login p {

@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'custom-customer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -11,6 +12,17 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
+  .main-register--button{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  #customer_login_link{
+    font-size:12px;
+    margin-top:0px;
+    font-weight:bold;
   }
 {%- endstyle -%}
 
@@ -49,7 +61,10 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
-    <div class="field">
+    <label for="RegisterForm-FirstName" class="customer-login--labelElements">
+      {{ 'customer.register.first_name' | t }}
+    </label>
+    <div class="field" >
       <input
         type="text"
         name="customer[first_name]"
@@ -64,7 +79,10 @@
         {{ 'customer.register.first_name' | t }}
       </label>
     </div>
-    <div class="field">
+    <label for="RegisterForm-LastName" class="customer-login--labelElements">
+      {{ 'customer.register.last_name' | t }}
+    </label>
+    <div class="field" >
       <input
         type="text"
         name="customer[last_name]"
@@ -79,7 +97,10 @@
         {{ 'customer.register.last_name' | t }}
       </label>
     </div>
-    <div class="field">
+    <label for="RegisterForm-email" class="customer-login--labelElements">
+      {{ 'customer.register.email' | t }}
+    </label>
+    <div class="field" >
       <input
         type="email"
         name="customer[email]"
@@ -110,7 +131,10 @@
         {{ form.errors.messages.email }}.
       </span>
     {%- endif -%}
-    <div class="field">
+    <label for="RegisterForm-password" class="customer-login--labelElements">
+      {{ 'customer.register.password' | t }}
+    </label>
+    <div class="field" >
       <input
         type="password"
         name="customer[password]"
@@ -135,9 +159,16 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
+    <div class="customer-login--terms-conditions">
+      <input type="checkbox" id="customer-login--{{section.id }}"/>
+      <label for="customer-login--{{section.id }} " class="customer-login--terms-conditions-styles">By Clicking , I am confirming that I have read and agree with the<span class="customer-login--terms-text"> Terms and Conditons </span></label>
+    </div>
+    <div class="main-register--button">
     <button>
       {{ 'customer.register.submit' | t }}
     </button>
+    <a href="/account/login" id="customer_login_link">Log in</a>
+    </div>
   {%- endform -%}
 </div>
 

@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'custom-customer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -12,6 +13,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  
 {%- endstyle -%}
 
 <div class="customer login section-{{ section.id }}-padding">
@@ -95,8 +97,11 @@
         </h2>
         {{ form.errors | default_errors }}
       {%- endif -%}
-
+      <label for="CustomerEmail" class="customer-login--labelElements">
+        {{ 'customer.login_page.email' | t }}
+      </label>
       <div class="field">
+        
         <input
           type="email"
           name="customer[email]"
@@ -115,6 +120,9 @@
       </div>
 
       {%- if form.password_needed -%}
+        <label for="CustomerPassword" class="customer-login--labelElements">
+          {{ 'customer.login_page.password' | t }}
+        </label>
         <div class="field">
           <input
             type="password"
@@ -135,6 +143,10 @@
         <a href="#recover">
           {{ 'customer.login_page.forgot_password' | t }}
         </a>
+        <div class="customer-login--terms-conditions">
+          <input type="checkbox" id="customer-login--{{section.id }}"/>
+          <label for="customer-login--{{section.id }} " class="customer-login--terms-conditions-styles">By Clicking , I am confirming that I have read and agree with the<span class="customer-login--terms-text"> Terms and Conditons </span></label>
+        </div>
       {%- endif -%}
 
       <button>
@@ -160,7 +172,7 @@
     </div>
   {%- endif -%}
 </div>
-
+<br/>
 {% schema %}
 {
   "name": "t:sections.main-login.name",
