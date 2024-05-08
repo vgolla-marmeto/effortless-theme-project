@@ -96,32 +96,16 @@
             "review": "Give your Review Here",
             "customer_name": "Verified Customer"
           }
-        },
-        "ratings_AyKihP": {
-          "type": "ratings",
-          "settings": {
-            "review": "Give your Review Here",
-            "customer_name": "Verified Customer"
-          }
-        },
-        "ratings_y3LnDB": {
-          "type": "ratings",
-          "settings": {
-            "review": "Give your Review Here",
-            "customer_name": "Verified Customer"
-          }
         }
       },
       "block_order": [
-        "ratings_qBTjyQ",
-        "ratings_AyKihP",
-        "ratings_y3LnDB"
+        "ratings_qBTjyQ"
       ],
       "settings": {
-        "background_Color": "#000",
+        "background_Color": "#ffffff",
         "card_background": "#ffffff",
         "heading": "Reviews",
-        "heading_color": "#fff",
+        "heading_color": "#000000",
         "heading_size": "h1",
         "show_customer_name": true,
         "auto_play": true,
@@ -130,8 +114,8 @@
         "show_arrows": false,
         "auto_play_duration": 2000,
         "pagination_color": "#000000",
-        "padding_top": 30,
-        "padding_bottom": 30
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
