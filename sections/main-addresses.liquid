@@ -14,27 +14,52 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
 {%- endstyle -%}
 
 {%- paginate customer.addresses by 5 -%}
-  <div class="customer addresses section-{{ section.id }}-padding" data-customer-addresses>
+  <div class="account customer addresses section-{{ section.id }}-padding main-adress-account-width" data-customer-addresses>
     <svg style="display: none">
       <symbol id="icon-caret" viewBox="0 0 10 6">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
       </symbol>
     </svg>
-    <h1>{{ 'customer.addresses.title' | t }}</h1>
-    <a href="{{ routes.account_url }}">
+    <h1 style="text-align:center">{{ 'customer.addresses.title' | t }}</h1>
+    {% comment %} <a href="{{ routes.account_url }}">
       {{ 'customer.account.return' | t }}
+    </a> {% endcomment %}
+<div class="customer-tabs-display-wrapper">
+  <div class="custom-account-profile-tabs">
+    <account-tabs class="account-tabs-container">
+      <a href="{{ routes.account_url }}">
+      <div class="account-tabs">my profile
+      </div>
+      </a>
+      <a href="account/orders">
+      <div class="account-tabs">
+        Orders
+      </div>
     </a>
-
+     <a href="/account/addresses">
+      <div class="account-tabs active">
+        Adress Book
+      </div>
+    </a>
+    <a href="/account/logout">
+      <div class="account-tabs">
+        Sign out
+      </div>
+    </a>
+    </account-tabs>
+  </div>
+<div class="customer-adresses-section">
     <div data-address>
       <button
         type="button"
         aria-expanded="false"
         aria-controls="AddAddress"
       >
-        {{ 'customer.addresses.add_new' | t }}
+        + {{ 'customer.addresses.add_new' | t }}
       </button>
       <div id="AddAddress">
         <h2 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
@@ -338,6 +363,8 @@
         </li>
       {%- endfor -%}
     </ul>
+</div>
+</div>
 
     {%- if paginate.pages > 1 -%}
       {%- if paginate.parts.size > 0 -%}
