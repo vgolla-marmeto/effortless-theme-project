@@ -111,6 +111,18 @@
     },
     "custom_reviews_XafRde": {
       "type": "custom-reviews",
+      "blocks": {
+        "ratings_qBTjyQ": {
+          "type": "ratings",
+          "settings": {
+            "review": "Give your Review Here",
+            "customer_name": "Verified Customer"
+          }
+        }
+      },
+      "block_order": [
+        "ratings_qBTjyQ"
+      ],
       "settings": {
         "background_Color": "#ffffff",
         "card_background": "#ffffff",
