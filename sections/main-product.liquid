@@ -4,7 +4,7 @@
   </div>
 </div>
  
- {{'pincode-checker.css' | asset_url | stylesheet_tag }}
+ {% comment %} {{'pincode-checker.css' | asset_url | stylesheet_tag }} {% endcomment %}
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -294,8 +294,6 @@
                 <div class="pincode-message text-body is-hidden" name="pincode-message"></div>
             </pincode-checker>
 
-            
-              
                     {%- when 'addtocart' -%}
                         <div id="bundle__atc"
                           class="button custom-atc__hover-button"
@@ -304,10 +302,7 @@
                           data-section-id="{{ section.id }}">
                           Add to cart 4 items 
                         </div>
-          
-    
-
-
+        
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
