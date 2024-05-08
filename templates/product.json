@@ -109,24 +109,10 @@
         "padding_bottom": 28
       }
     },
-    "custom_reviews_jMTQBp": {
+    "custom_reviews_XafRde": {
       "type": "custom-reviews",
       "blocks": {
-        "ratings_FUikBP": {
-          "type": "ratings",
-          "settings": {
-            "review": "Give your Review Here",
-            "customer_name": "Verified Customer"
-          }
-        },
-        "ratings_TrVdFU": {
-          "type": "ratings",
-          "settings": {
-            "review": "Give your Review Here",
-            "customer_name": "Verified Customer"
-          }
-        },
-        "ratings_73KxUA": {
+        "ratings_qBTjyQ": {
           "type": "ratings",
           "settings": {
             "review": "Give your Review Here",
@@ -135,16 +121,14 @@
         }
       },
       "block_order": [
-        "ratings_FUikBP",
-        "ratings_TrVdFU",
-        "ratings_73KxUA"
+        "ratings_qBTjyQ"
       ],
       "settings": {
-        "background_Color": "#000",
-        "card_background": "#fff",
+        "background_Color": "#ffffff",
+        "card_background": "#ffffff",
         "heading": "Reviews",
         "heading_color": "#000000",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "show_customer_name": true,
         "auto_play": true,
         "show_pagination": true,
@@ -160,6 +144,6 @@
   "order": [
     "main",
     "related-products",
-    "custom_reviews_jMTQBp"
+    "custom_reviews_XafRde"
   ]
 }
