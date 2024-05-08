@@ -114,12 +114,11 @@
               {%- when '@app' -%}
                 {% render block %}
                 {%- when 'title' -%}
-                  <div class="product__title" {{ block.shopify_attributes }}>
-                    <h2>{{ product.title | escape }}</h2>
-                    <a href="{{ product.url }}" class="product__title">
-                      <h2 class="h1">
-                        {{ product.title | strip_html }}
-                      </h2>
+                  <div class="product-title" {{ block.shopify_attributes }}>
+                    <a href="{{ product.url }}" class="product-title">
+                      <p>
+                        {{ product.title | escape }}
+                      </p>
                     </a>
                   </div>
                 {% comment %} {% assign inventory=product.selected_or_first_available_variant.inventory_quantity %}
@@ -144,17 +143,17 @@
                 {% endif %}
               </div> {% endcomment %}
 
-                <div id="custominventorystatus">
-                  {% if product.selected_or_first_available_variant.inventory_quantity == 0 %}
-                    <p>Preorder</p>
-                    {% elsif  product.selected_or_first_available_variant.inventory_quantity > 10 %}
-                    <p>Available</p>
+              <div id="custominventorystatus">
+                {% if product.selected_or_first_available_variant.inventory_quantity == 0 %}
+                  <p class="avaliable">Preorder</p>
+                  {% elsif  product.selected_or_first_available_variant.inventory_quantity > 10 %}
+                  <p class="avaliable">Available</p>
 
-                     {%elsif  product.selected_or_first_available_variant.inventory_quantity < 10 %}
-                      <p>Only {{ product.selected_or_first_available_variant.inventory_quantity }} units in stock.</p>
-                    
-                    {%endif %}
-                </div>
+                   {%elsif  product.selected_or_first_available_variant.inventory_quantity < 10 %}
+                    <p class="not-avaliable">Only {{ product.selected_or_first_available_variant.inventory_quantity }} units in stock.</p>
+                  
+                  {%endif %}
+              </div>
 
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -2500,4 +2499,5 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %} 
+

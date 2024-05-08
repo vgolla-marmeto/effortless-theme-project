@@ -80,6 +80,7 @@
 .product-title {
     font-weight: 400;
     font-size: 25px;
+    text-decoration: none;
 }
 
 .avaliable {

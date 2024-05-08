@@ -1,11 +1,13 @@
-{% assign headerProducts = productList %}
-{{ 'custombestsellers.css' | asset_url | stylesheet_tag }}
 {% comment %}
   Renders a header drawer menu for mobile and desktop.
 
   Usage:
   {% render 'header-drawer'  %}
 {% endcomment %}
+
+{{ 'custombestsellers.css' | asset_url | stylesheet_tag }}
+
+
 {% style %}
 .menu-title{
   font-size:2rem;
@@ -37,16 +39,22 @@
 }
 .header-products-container{
   padding:10px;
+  margin-top:20px;
 }
 .header-drawer--products-container{
   display:flex;
   align-items:center;
+  margin-bottom:20px;
+  padding:5px;
 
 }
 .header-drawer-single-product{
   margin-left:0.8rem;
   flex-grow:1;
 
+}
+.header-drawer-single-product{
+  position:relative;
 }
    
 
@@ -61,6 +69,9 @@
 } */
 
 {% endstyle %}
+
+{% assign headerProducts = productList %}
+
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
@@ -190,20 +201,11 @@
           <div class="header-products-container">
             <h3>Shop These Deals</h3>
             <div class="header-drawer--products-container">
+
             {% for product in headerProducts %}
               <div class="header-drawer-single-product">
-              {% render 'header-product-card', product:product %} 
+              {% render 'product-card', product:product, displayButton:true %} 
               </div>
-              {% comment %} <div class="header-drawer-product">
-                <div class="header-drawer-image-container">
-                  <img src="{{ product.featured_image | image_url}}" height="300" width="auto">
-                  <span>{{ product.tag }}</span>
-                </div>
-                <div class="header-drawer-product-information">
-                  <p>{{ product.title }}</p>
-                  <p>{{ product.price }}</p>
-                </div>
-              </div> {% endcomment %}
               
             {% endfor %}
             </div>

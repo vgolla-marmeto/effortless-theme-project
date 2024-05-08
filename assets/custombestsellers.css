@@ -455,7 +455,16 @@
     }
   }
 
+.addto-cart-button-style{
+  background-color: #3a837e;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 8px;
 
+}
 
 
 

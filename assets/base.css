@@ -1961,6 +1961,7 @@ input[type='checkbox'] {
   padding: 0;
   height:62px;
   width: 62px;
+  background-color: #f1f2f4;
 }
 
 .quantity__button:first-child {
