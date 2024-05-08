@@ -1960,7 +1960,7 @@ input[type='checkbox'] {
   color: rgb(var(--color-foreground));
   padding: 0;
   height:62px;
-  width: 62px;
+  /* width: 62px; */
   background-color: #f1f2f4;
 }
 

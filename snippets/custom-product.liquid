@@ -1,6 +1,5 @@
-{{ "custom-product-deatil.css" | asset_url | stylesheet_tag }}
-
-
+<script src="{{'custom-splide-component.js' |  asset_url}}" defer></script>
+{{ "custom-product-card.css" | asset_url | stylesheet_tag }}
 <div class="product-wrapper">
   <div class="product-wrapper--container page-width">
     <div class="product-image-slider">
@@ -12,10 +11,9 @@
               {% for image in product.images %}
                 <li class="splide__slide thumbnail_image_list">
                   <img
-                    src="{{image | image_url}}"
+                    src="{{image.src | image_url}}"
                     alt="{{product.title}}"
-                    width="300"
-                    height="300" />
+                   height="auto" width="auto" />
                 </li>
               {% endfor %}
             </ul>
@@ -29,10 +27,8 @@
               {% for image in product.images %}
                 <li class="splide__slide">
                   <img
-                    src="{{image |  image_url}}"
-                    alt="{{product.title}}"
-                    width="{{image.width}}"
-                    height="{{image.height}}" />
+                    src="{{image.src |  image_url}}"
+                    alt="{{product.title}}"   height="auto" width="auto"/>
                 </li>
               {% endfor %}
             </ul>
@@ -41,4 +37,4 @@
       </div>
     </div>
   </div>
-  </div>
+</div>

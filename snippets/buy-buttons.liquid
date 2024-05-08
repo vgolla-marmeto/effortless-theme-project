@@ -10,6 +10,23 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+
+{% style %}
+.add-to-cart-button{
+  background-color: rgb(58, 131, 126);
+    color: white;
+    height:62px;
+    font-size:18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.add-to-cart-button:hover{
+  background-color:#fff;
+  color:rgb(58, 131, 126);
+  border:1px solid rgb(58, 131, 126);
+}
+
+{% endstyle %}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -80,7 +97,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="add-to-cart-button product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}

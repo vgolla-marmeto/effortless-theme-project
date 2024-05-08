@@ -42,25 +42,6 @@
           "settings": {
             "offer_title": "hdh"
           }
-        },
-        "bundles_Nk4k4y": {
-          "type": "bundles",
-          "disabled": true,
-          "settings": {
-            "bundle_heading": "Frequently bought together"
-          }
-        },
-        "pincode_checker_yAg6WJ": {
-          "type": "pincode-checker",
-          "settings": {
-            "pincode_title": ""
-          }
-        },
-        "progress_bar_McYxWm": {
-          "type": "progress-bar",
-          "settings": {
-            "progress_title": "hello"
-          }
         }
       },
       "block_order": [
@@ -70,10 +51,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "variant_offer_xjb9Bm",
-        "bundles_Nk4k4y",
-        "pincode_checker_yAg6WJ",
-        "progress_bar_McYxWm"
+        "variant_offer_xjb9Bm"
       ],
       "settings": {
         "enable_sticky_info": false,

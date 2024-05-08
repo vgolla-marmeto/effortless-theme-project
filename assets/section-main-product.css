@@ -222,6 +222,14 @@
   font-size: 1.4rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   letter-spacing: 0.07rem;
+  /* custom styles */
+  background: #5a31f4;
+    border-color: #5a31f4;
+    color: #fff;
+    height:62px;
+    font-size:18px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .shopify-payment-button__button--unbranded::selection {
